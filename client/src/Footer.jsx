@@ -1,5 +1,8 @@
 import React from 'react'
 
+
+
+
 export const Footer = () => {
   return (
     <div>
@@ -16,25 +19,25 @@ export const Footer = () => {
 
 					<ul>
 						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+							<a href={"/"} onClick={(e) => { e.preventDefault(); }} class="stext-107 cl7 hov-cl1 trans-04">
 								Women
 							</a>
 						</li>
 
 						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+							<a href={"/"} onClick={(e) => { e.preventDefault(); }} class="stext-107 cl7 hov-cl1 trans-04">
 								Men
 							</a>
 						</li>
 
 						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+							<a href={"/"} onClick={(e) => { e.preventDefault(); }} class="stext-107 cl7 hov-cl1 trans-04">
 								Shoes
 							</a>
 						</li>
 
 						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+							<a href={"/"} onClick={(e) => { e.preventDefault(); }} class="stext-107 cl7 hov-cl1 trans-04">
 								Watches
 							</a>
 						</li>
@@ -48,25 +51,25 @@ export const Footer = () => {
 
 					<ul>
 						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+							<a href={"/"} onClick={(e) => { e.preventDefault(); }} class="stext-107 cl7 hov-cl1 trans-04">
 								Track Order
 							</a>
 						</li>
 
 						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+							<a href={"/"} onClick={(e) => { e.preventDefault(); }} class="stext-107 cl7 hov-cl1 trans-04">
 								Returns 
 							</a>
 						</li>
 
 						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+							<a href={"/"} onClick={(e) => { e.preventDefault(); }}class="stext-107 cl7 hov-cl1 trans-04">
 								Shipping
 							</a>
 						</li>
 
 						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+							<a href={"/"} onClick={(e) => { e.preventDefault(); }} class="stext-107 cl7 hov-cl1 trans-04">
 								FAQs
 							</a>
 						</li>
@@ -83,15 +86,15 @@ export const Footer = () => {
 					</p>
 
 					<div class="p-t-27">
-						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+						<a href={"/"} onClick={(e) => { e.preventDefault(); }} class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
 							<i class="fa fa-facebook"></i>
 						</a>
 
-						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+						<a href={"/"} onClick={(e) => { e.preventDefault(); }} class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
 							<i class="fa fa-instagram"></i>
 						</a>
 
-						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+						<a href={"/"} onClick={(e) => { e.preventDefault(); }} class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
 							<i class="fa fa-pinterest-p"></i>
 						</a>
 					</div>
@@ -109,7 +112,7 @@ export const Footer = () => {
 						</div>
 
 						<div class="p-t-18">
-							<button class="flex-c-m stext-101 cl0 size-103 bg1 bor1 hov-btn2 p-lr-15 trans-04">
+							<button onClick={(e) => { e.preventDefault(); }} class="flex-c-m stext-101 cl0 size-103 bg1 bor1 hov-btn2 p-lr-15 trans-04">
 								Subscribe
 							</button>
 						</div>
@@ -119,23 +122,23 @@ export const Footer = () => {
 
 			<div class="p-t-40">
 				<div class="flex-c-m flex-w p-b-18">
-					<a href="#" class="m-all-1">
+					<a href={"/"} onClick={(e) => { e.preventDefault(); }} class="m-all-1">
 						<img src="images/icons/icon-pay-01.png" alt="ICON-PAY"/>
 					</a>
 
-					<a href="#" class="m-all-1">
+					<a href={"/"} onClick={(e) => { e.preventDefault(); }} class="m-all-1">
 						<img src="images/icons/icon-pay-02.png" alt="ICON-PAY"/>
 					</a>
 
-					<a href="#" class="m-all-1">
+					<a href={"/"} onClick={(e) => { e.preventDefault(); }} class="m-all-1">
 						<img src="images/icons/icon-pay-03.png" alt="ICON-PAY"/>
 					</a>
 
-					<a href="#" class="m-all-1">
+					<a href={"/"} onClick={(e) => { e.preventDefault(); }} class="m-all-1">
 						<img src="images/icons/icon-pay-04.png" alt="ICON-PAY"/>
 					</a>
 
-					<a href="#" class="m-all-1">
+					<a href={"/"} onClick={(e) => { e.preventDefault(); }} class="m-all-1">
 						<img src="images/icons/icon-pay-05.png" alt="ICON-PAY"/>
 					</a>
 				</div>
