@@ -2,22 +2,21 @@ import { Routes, Route } from "react-router-dom";
 import { BrowserRouter } from "react-router-dom";
 
 import Navbar from "./Navbar/Navbar";
-import TopThree from "./TopThree/TopThree";
-import { ProductOverview } from "./ProductOverview";
-import { Filter } from "./Filter/Filter";
-import SearchBar from "./SearchBar/SearchBar";
-import { ProductList } from "./ProductList/ProductList";
 import { Footer } from "./Footer/Footer";
-
 import ContactPage from "./ContactPage/ContactPage";
 import AboutPage from "./AboutPage/AboutPage";
 import Register from "./RegisterPage/Register";
 import Login from "./LoginPage/Login";
 import Page404 from "./Page404/Page404";
+import HomePage from "./HomePage/HomePage";
+
+import SearchBar from "./SearchBar/SearchBar";
+import { ProductOverview } from "./ProductOverview";
+import { Filter } from "./Filter/Filter";
 
 
-
-// import {Cart} from "./Cart";  - new template to be switched !
+import { ProductList } from "./ProductList/ProductList"; // all products items 
+import {Cart} from "./Cart";  //user staff- new template to be switched !
 // import Slider from "./Slider";
 
 function App() {
@@ -26,12 +25,15 @@ function App() {
     <BrowserRouter>
       <Navbar/> 
         <Routes>
-            <Route path="/" element={<TopThree/>} />
+            <Route path="/" element={<HomePage/>} />
             <Route path="/register" element={<Register/>} />
-            <Route path="/about" element={<AboutPage/>} />
-            <Route path="/contact" element={<ContactPage/>} />
-            
             <Route path="/login" element={<Login/>} />
+            <Route path="/about" element={<AboutPage/>} />
+            <Route path="/contact" element={<ContactPage/>} /> 
+            
+            
+            <Route path="/cart" element={<Cart/>} />
+
 
             <Route path="*" element={<Page404 />} />   
         </Routes>
