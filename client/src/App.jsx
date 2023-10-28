@@ -12,7 +12,9 @@ import { Footer } from "./Footer/Footer";
 import ContactPage from "./ContactPage/ContactPage";
 import AboutPage from "./AboutPage/AboutPage";
 import Register from "./RegisterPage/Register";
+import Login from "./LoginPage/Login";
 import Page404 from "./Page404/Page404";
+
 
 
 // import {Cart} from "./Cart";  - new template to be switched !
@@ -22,26 +24,18 @@ function App() {
   return (
 
     <BrowserRouter>
-      <Navbar/>
+      <Navbar/> 
         <Routes>
+            <Route path="/" element={<TopThree/>} />
+            <Route path="/register" element={<Register/>} />
+            <Route path="/about" element={<AboutPage/>} />
+            <Route path="/contact" element={<ContactPage/>} />
+            
+            <Route path="/login" element={<Login/>} />
 
-            {/* <TopThree/> */}
-            {/* <ProductOverview/> */}
-            {/* <Filter/> */}
-            {/* <SearchBar/> */}
-            {/* <ProductList/> */}     
-          
-
-              {/* <AboutPage/> */}
-              {/* <ContactPage/> */}
-              <Route path="/register" element={<Register/>} />
-
-            {/* <Slider/> */}
-            {/* <Cart/>  */}  
-
-              <Route path="*" element={<Page404 />} />   
-          </Routes>
-        <Footer/>
+            <Route path="*" element={<Page404 />} />   
+        </Routes>
+      <Footer/>
     </BrowserRouter>
   );
 }

@@ -101,14 +101,16 @@ console.log(values);
 
 
 return (
-  <div className='wrapper'>
-    <form onSubmit={handleSubmit}>
-      <h1>Register</h1>
-      {inputs.map(input => (
-        <FormInput key={input.id} {...input} value={values[input.name]} onChange={onChange}/>
-      ))}  
-      <button>Submit</button>
-    </form>
+  <div className='box1 '>
+    <div className='wrapper1 d-flex justify-content-center'>
+      <form onSubmit={handleSubmit}>
+        <h1 className="">Register</h1>
+        {inputs.map(input => (
+          <FormInput key={input.id} {...input} value={values[input.name]} onChange={onChange}/>
+        ))}  
+        <button>Submit</button>
+      </form>
+    </div>
   </div>
 )
 }

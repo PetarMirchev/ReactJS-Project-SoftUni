@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 
 
@@ -22,62 +23,62 @@ export default function Navbar() {
 					</div>
 
 					<div className="right-top-bar flex-w h-full">
-						<a href={"/register"} onClick={(e) => { e.preventDefault(); }} className="flex-c-m trans-04 p-lr-25">
+					<Link to="/register" className="flex-c-m trans-04 p-lr-25">
 							Register
-						</a>
+					</Link>
+					
+					<Link to="/login" className="flex-c-m trans-04 p-lr-25">	
+						 	Login
+					</Link>	
+					
+					<Link to="/logout" className="flex-c-m trans-04 p-lr-25">
+							Logout
+					</Link>
 
-						<a href={"/"} onClick={(e) => { e.preventDefault(); }} className="flex-c-m trans-04 p-lr-25">
+					<Link to="/" className="flex-c-m trans-04 p-lr-25">
 							My Account
-						</a>
-
-						<a href={"/"} onClick={(e) => { e.preventDefault(); }} className="flex-c-m trans-04 p-lr-25">
-							EN
-						</a>
-
-						<a href={"/"} onClick={(e) => { e.preventDefault(); }} className="flex-c-m trans-04 p-lr-25">
-							USD
-						</a>
+					</Link>
+						
 					</div>
 				</div>
 			</div>
 
-				<nav className="limiter-menu-desktop container">
-					
-					{/* <!-- Logo desktop -->		 */}
-					<a href={"/"} onClick={(e) => { e.preventDefault(); }} className="logo">
-						<img src="images/icons/logo-01.png" alt="IMG-LOGO"/>
-					</a>
 
+				<nav className="limiter-menu-desktop container">				
+					{/* <!-- Logo desktop -->		 */}				
+						<Link  to="/" className="logo"><img src="images/icons/logo-01.png" alt="IMG-LOGO"/></Link>
+
+					
 					{/* <!-- Menu desktop --> */}
 					<div className="menu-desktop">
 						<ul className="main-menu">
 							<li className="active-menu">
-								<a href="index.html">Home</a>
-								<ul className="sub-menu">
+							<Link to="/">Home</Link>
+								{/* <ul className="sub-menu">
 									<li><a href="index.html">Homepage 1</a></li>
 									<li><a href="home-02.html">Homepage 2</a></li>
 									<li><a href="home-03.html">Homepage 3</a></li>
-								</ul>
+								</ul> */}
 							</li>
 
 							<li>
-								<a href="product.html">Shop</a>
+								<Link to="/shop">Shop</Link>								
 							</li>
 
 							<li className="label1" data-label1="hot">
 								<a href="shoping-cart.html">Features</a>
 							</li>
 
-							<li>
+							{/* <li>
 								<a href="blog.html">Blog</a>
+							</li> */}
+
+							<li>
+								<Link to="/about">About</Link>
 							</li>
 
 							<li>
-								<a href="about.html">About</a>
-							</li>
-
-							<li>
-								<a href="contact.html">Contact</a>
+								<Link to="/contact">Contact</Link>
 							</li>
 						</ul>
 					</div>	

@@ -2,7 +2,6 @@ import React from 'react'
 
 
 
-
 export const Footer = () => {
   return (
     <div>
@@ -85,16 +84,21 @@ export const Footer = () => {
 						Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879
 					</p>
 
+					
 					<div class="p-t-27">
-						<a href={"/"} onClick={(e) => { e.preventDefault(); }} class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+					
+						<a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" className="fs-18 cl7 hov-cl1 trans-04 m-r-16">
 							<i class="fa fa-facebook"></i>
 						</a>
+			
 
-						<a href={"/"} onClick={(e) => { e.preventDefault(); }} class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+
+							<a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" className="fs-18 cl7 hov-cl1 trans-04 m-r-16">
 							<i class="fa fa-instagram"></i>
-						</a>
+							</a>
 
-						<a href={"/"} onClick={(e) => { e.preventDefault(); }} class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+
+						<a href="https://www.pinterest.com/" target="_blank" rel="noopener noreferrer"  className="fs-18 cl7 hov-cl1 trans-04 m-r-16">
 							<i class="fa fa-pinterest-p"></i>
 						</a>
 					</div>

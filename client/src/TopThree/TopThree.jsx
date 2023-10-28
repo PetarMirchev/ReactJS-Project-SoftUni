@@ -89,4 +89,4 @@ const TopThree = () => {
   )
 }
 
-export default TopThree
+export default TopThree;
