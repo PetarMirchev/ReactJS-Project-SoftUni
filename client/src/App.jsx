@@ -1,28 +1,35 @@
-import Navbar from "./Navbar";
-import Banner from "./Banner";
-import { Product } from "./Product";
-import { Filter } from "./Filter";
-import SearchBar from "./SearchBar";
-import { ProductList } from "./ProductList";
-import { Footer } from "./Footer";
+import Navbar from "./Navbar/Navbar";
+import TopThree from "./TopThree/TopThree";
+import { ProductOverview } from "./ProductOverview";
+import { Filter } from "./Filter/Filter";
+import SearchBar from "./SearchBar/SearchBar";
+import { ProductList } from "./ProductList/ProductList";
+import { Footer } from "./Footer/Footer";
+
+import ContactPage from "./ContactPage/ContactPage";
+import AboutPage from "./AboutPage/AboutPage";
 
 
-// import {Cart} from "./Cart";
+// import {Cart} from "./Cart";  - new template to be switched !
 // import Slider from "./Slider";
 
 function App() {
   return (
     <div>
-      <Navbar/>
-      <Banner/>
-      <Product/>
-      <Filter/>
-      <SearchBar/>
-      <ProductList/>
-     
-      <Footer/>
+      {/* <Navbar/> */}
+      {/* <TopThree/> */}
+      {/* <ProductOverview/> */}
+      {/* <Filter/> */}
+      {/* <SearchBar/> */}
+      {/* <ProductList/> */}     
+      {/* <Footer/> */}
+
+        <AboutPage/>
+        <ContactPage/>
+
+
        {/* <Slider/> */}
-      {/* <Cart/> */}
+      {/* <Cart/>  */}
      </div>
   );
 }
