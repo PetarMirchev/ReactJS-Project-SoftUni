@@ -22,12 +22,12 @@ export default function Navbar() {
 					</div>
 
 					<div className="right-top-bar flex-w h-full">
-						<a href={"/"} onClick={(e) => { e.preventDefault(); }} className="flex-c-m trans-04 p-lr-25">
-							Help & FAQs
+						<a href={"/register"} onClick={(e) => { e.preventDefault(); }} className="flex-c-m trans-04 p-lr-25">
+							Register
 						</a>
 
 						<a href={"/"} onClick={(e) => { e.preventDefault(); }} className="flex-c-m trans-04 p-lr-25">
-							{/* My Account */}
+							My Account
 						</a>
 
 						<a href={"/"} onClick={(e) => { e.preventDefault(); }} className="flex-c-m trans-04 p-lr-25">

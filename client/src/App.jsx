@@ -1,3 +1,6 @@
+import { Routes, Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
+
 import Navbar from "./Navbar/Navbar";
 import TopThree from "./TopThree/TopThree";
 import { ProductOverview } from "./ProductOverview";
@@ -9,6 +12,7 @@ import { Footer } from "./Footer/Footer";
 import ContactPage from "./ContactPage/ContactPage";
 import AboutPage from "./AboutPage/AboutPage";
 import Register from "./RegisterPage/Register";
+import Page404 from "./Page404/Page404";
 
 
 // import {Cart} from "./Cart";  - new template to be switched !
@@ -16,24 +20,29 @@ import Register from "./RegisterPage/Register";
 
 function App() {
   return (
-    <div>
-      {/* <Navbar/> */}
-      {/* <TopThree/> */}
-      {/* <ProductOverview/> */}
-      {/* <Filter/> */}
-      {/* <SearchBar/> */}
-      {/* <ProductList/> */}     
-      {/* <Footer/> */}
 
-        {/* <AboutPage/> */}
-        {/* <ContactPage/> */}
+    <BrowserRouter>
+      <Navbar/>
+        <Routes>
 
-        <Register/>
+            {/* <TopThree/> */}
+            {/* <ProductOverview/> */}
+            {/* <Filter/> */}
+            {/* <SearchBar/> */}
+            {/* <ProductList/> */}     
+          
 
+              {/* <AboutPage/> */}
+              {/* <ContactPage/> */}
+              <Route path="/register" element={<Register/>} />
 
-       {/* <Slider/> */}
-      {/* <Cart/>  */}
-     </div>
+            {/* <Slider/> */}
+            {/* <Cart/>  */}  
+
+              <Route path="*" element={<Page404 />} />   
+          </Routes>
+        <Footer/>
+    </BrowserRouter>
   );
 }
 
