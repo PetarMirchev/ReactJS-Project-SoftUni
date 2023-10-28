@@ -8,6 +8,7 @@ import { Footer } from "./Footer/Footer";
 
 import ContactPage from "./ContactPage/ContactPage";
 import AboutPage from "./AboutPage/AboutPage";
+import Register from "./RegisterPage/Register";
 
 
 // import {Cart} from "./Cart";  - new template to be switched !
@@ -24,8 +25,10 @@ function App() {
       {/* <ProductList/> */}     
       {/* <Footer/> */}
 
-        <AboutPage/>
-        <ContactPage/>
+        {/* <AboutPage/> */}
+        {/* <ContactPage/> */}
+
+        <Register/>
 
 
        {/* <Slider/> */}
