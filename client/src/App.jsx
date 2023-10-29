@@ -13,13 +13,7 @@ import Page404 from "./Page404/Page404";
 import HomePage from "./HomePage/HomePage";
 import ShopPage from "./Shop/ShopPage";
 
-
-import { ProductOverview } from "./ProductOverview";
-
-
-
-
-import { ProductList } from "./ProductList/ProductList"; // all products items 
+ // all products items 
 import {Cart} from "./Cart";  //user staff- new template to be switched !
 // import Slider from "./Slider";
 

@@ -15,7 +15,7 @@ const Navbar1 = () => {
                     <nav className="main-nav">
                         {/* <!-- ***** Logo Start ***** --> */}
                         <Link  to="/" className="logo">
-                            <img src="images/logo.png"/>
+                            <img src="images/logo.png" alt='logo'/>
                         </Link>
                         {/* <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** --> */}

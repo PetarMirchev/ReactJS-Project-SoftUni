@@ -1,5 +1,6 @@
 import React from 'react'
 import './footer.css';
+import { Link } from "react-router-dom";
 
 
 
@@ -26,19 +27,19 @@ const Footer1 = () => {
                 <div className="col-lg-4">
                     <h4>Useful Links</h4>
                     <ul>
-                        <li><a href="#">Homepage</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Help</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><Link to="/">Homepage</Link></li>
+                        <li><Link to="/about">About Us</Link></li>
+                        <li><Link to="/contact">Contact Us</Link></li>
+                        <li><Link to="/shop">Shop</Link></li>
                     </ul>
                 </div>
                 <div className="col-lg-4">
                     <h4>Help &amp; Information</h4>
                     <ul>
-                        <li><a href="#">Help</a></li>
-                        <li><a href="#">FAQ's</a></li>
-                        <li><a href="#">Shipping</a></li>
-                        <li><a href="#">Tracking ID</a></li>
+                        <li>Help</li>
+                        <li>FAQ's</li>
+                        <li>Shipping</li>
+                        <li>Tracking ID</li>
                     </ul>
                 </div>
                 <div className="col-lg-12">
