@@ -101,7 +101,6 @@ console.log(values);
 
 
 return (
-  <div className='box1 '>
     <div className='wrapper1 d-flex justify-content-center'>
       <form onSubmit={handleSubmit}>
         <h1 className="">Register</h1>
@@ -111,7 +110,6 @@ return (
         <button>Submit</button>
       </form>
     </div>
-  </div>
 )
 }
 
