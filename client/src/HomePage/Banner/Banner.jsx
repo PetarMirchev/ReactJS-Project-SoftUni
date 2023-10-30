@@ -38,7 +38,7 @@ const Banner = () => {
                                                     <h4>Women</h4>
                                                     <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>
                                                     <div className="main-border-button">
-                                                        <Link to="/">Discover More</Link>
+                                                        <Link to="/shop">Discover More</Link>
                                                     </div>
                                                 </div>
                                             </div>
@@ -58,7 +58,7 @@ const Banner = () => {
                                                     <h4>Men</h4>
                                                     <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>
                                                     <div className="main-border-button">
-                                                        <Link to="/">Discover More</Link>
+                                                        <Link to="/shop">Discover More</Link>
                                                     </div>
                                                 </div>
                                             </div>
@@ -78,7 +78,7 @@ const Banner = () => {
                                                     <h4>Kids</h4>
                                                     <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>
                                                     <div className="main-border-button">
-                                                        <Link to="/">Discover More</Link>
+                                                        <Link to="/shop">Discover More</Link>
                                                     </div>
                                                 </div>
                                             </div>
@@ -98,7 +98,7 @@ const Banner = () => {
                                                     <h4>Accessories</h4>
                                                     <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>
                                                     <div className="main-border-button">
-                                                        <Link to="/">Discover More</Link>
+                                                        <Link to="/shop">Discover More</Link>
                                                     </div>
                                                 </div>
                                             </div>

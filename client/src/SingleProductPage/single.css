@@ -1,0 +1,29 @@
+.left-images img{
+    width: 400px;
+    margin: 10px;
+}
+
+.banner-product-text{
+    color: white;
+}
+
+
+.minus{
+    width: 15px;   
+}
+
+.plus{
+    width: 15px;   
+}
+
+.input-text qty text{
+    width: 10px;
+}
+
+.section{
+    margin-bottom: 50px;
+}
+
+#button-extra-1{
+    border-radius: 1px;
+}

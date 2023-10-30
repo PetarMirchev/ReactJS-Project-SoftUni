@@ -1,6 +1,7 @@
 import React from 'react';
 import './navbar.css';
 import { Link } from "react-router-dom";
+import logoImg from './logo.png';
 
 
 const Navbar1 = () => {
@@ -15,7 +16,7 @@ const Navbar1 = () => {
                     <nav className="main-nav">
                         {/* <!-- ***** Logo Start ***** --> */}
                         <Link  to="/" className="logo">
-                            <img src="images/logo.png" alt='logo'/>
+                            <img src={logoImg} alt='logo'/>
                         </Link>
                         {/* <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** --> */}
@@ -45,7 +46,7 @@ const Navbar1 = () => {
                             <li ><Link to="/register">Register</Link></li>
                             <li ><Link to="/login">Login</Link></li>
                             <li ><Link to="/logout">Logout</Link></li>
-                            <li ><Link to="/">My Account</Link></li>
+                            <li ><Link to="/profile">My Account</Link></li>
                         </ul>        
     
                         {/* <!-- ***** Menu End ***** --> */}

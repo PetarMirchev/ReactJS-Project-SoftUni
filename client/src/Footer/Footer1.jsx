@@ -1,6 +1,7 @@
 import React from 'react'
 import './footer.css';
 import { Link } from "react-router-dom";
+import logoImg2 from './white-logo.png';
 
 
 
@@ -14,9 +15,9 @@ const Footer1 = () => {
                 <div className="col-lg-4">
                     <div className="first-item">
                         <div className="logo">
-                            <img src="images/white-logo.png" alt="hexashop ecommerce templatemo"/>
+                            <img src={logoImg2} alt="hexashop ecommerce templatemo"/>
                         </div>
-                        <ul>
+                        <ul id='company-text-info'>
                             <li>6400 Collins Ave, Plovdiv, Bulgaria</li>
                             <li>hexashop@company.com</li>
                             <li>010-020-0340</li>
@@ -35,8 +36,8 @@ const Footer1 = () => {
                 </div>
                 <div className="col-lg-4">
                     <h4>Help &amp; Information</h4>
-                    <ul>
-                        <li>Help</li>
+                    <ul id='information-list-items'>
+                        <li >Help</li>
                         <li>FAQ's</li>
                         <li>Shipping</li>
                         <li>Tracking ID</li>

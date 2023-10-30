@@ -19,7 +19,7 @@ const ExploreProducts = () => {
                         <p>There are 5 pages included in this HexaShop Template and we are providing it to you for absolutely free of charge at our TemplateMo website. There are web development costs for us.</p>
                         <p>Please also tell your friends about our great website. Thank you.</p>
                         <div className="main-border-button">
-                            <a href="products.html">Discover More</a>
+                            <a href="/shop">Discover More</a>
                         </div>
                     </div>
                 </div>

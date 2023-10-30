@@ -39,8 +39,8 @@ const Login = () => {
           <div className="or">OR</div>
         </div>
         <div className="right">
-          <input type="text" placeholder="Username" />
-          <input type="text" placeholder="password" />
+          <input className="input-fields" type="text" placeholder="Username" />
+          <input className="input-fields" type="text" placeholder="password" />
           <button className="submitBTN">Login</button>
         </div>
       </div>

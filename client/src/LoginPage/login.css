@@ -6,6 +6,7 @@
   .login{
     /* space for login -- > height - 50px (navbar) */
     height: calc(100vh - 100px);
+    margin-top: 70px;
 
     display: flex;
     align-items: center;
@@ -14,7 +15,7 @@
 
   .loginTitle {
     position: absolute;
-    top: 150px;
+    top: 120px;
     color: rgb(85, 81, 81);
   }
 
@@ -112,4 +113,8 @@
     padding: 15px 20px;
     border-radius: 5px;
     cursor: pointer;
+  }
+
+  .input-fields{
+    margin-bottom: 10px;
   }

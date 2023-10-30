@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { BrowserRouter } from "react-router-dom";
-
+import { useState } from "react";
 
 import Navbar1 from "./Navbar/Navbar1";
 import Footer  from "./Footer/Footer1";
@@ -12,15 +12,19 @@ import Page404 from "./Page404/Page404";
 import HomePage from "./HomePage/HomePage";
 import ShopPage from "./Shop/ShopPage";
 
+import SingleProduct from "./SingleProductPage/SingleProduct";
+import ProfilePage from "./ProfilePage/Profile";
 
- //? single product/item new template
-import {Cart} from "./Cart"; 
 
 
 //! user profile page --> TO DO //user staff - new template to be switched !
 //! search component  to be implemented in 'Shop/Filter/Filter.jsx'
+  
 
-function App() {
+  function App() {
+    //to be used context for user
+    const [user, setUser] = useState(null);
+
   return (
 
     <BrowserRouter>
@@ -28,15 +32,17 @@ function App() {
       <Navbar1/>
         <Routes>
             <Route path="/" element={<HomePage/>} />
-            <Route path="/register" element={<Register/>} />
-            <Route path="/login" element={<Login/>} />
-            <Route path="/logout" element={<HomePage/>} />
-            <Route path="/about" element={<AboutPage/>} />
-            <Route path="/contact" element={<ContactPage/>} /> 
-            <Route path="/shop" element={<ShopPage/>} /> 
-            
-            <Route path="/cart" element={<Cart/>} />
+            <Route path="register" element={<Register/>} />
 
+            <Route path="login" element={<Login/>} setUser={setUser} />
+            <Route path="profile" element={<ProfilePage user={user}/>} />
+
+            <Route path="logout" element={<HomePage/>} />
+            <Route path="about" element={<AboutPage/>} />
+            <Route path="contact" element={<ContactPage/>} /> 
+            <Route path="shop" element={<ShopPage/>} />             
+            <Route path="shop/:productId" element={<SingleProduct/>} />
+            
 
             <Route path="*" element={<Page404 />} />   
         </Routes>
