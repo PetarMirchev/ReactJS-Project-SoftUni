@@ -118,3 +118,8 @@
   .input-fields{
     margin-bottom: 10px;
   }
+
+  .submitBTN:disabled{
+    background-color: #0071c28c;
+    cursor: not-allowed;
+  }

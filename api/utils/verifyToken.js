@@ -15,3 +15,32 @@ export const verifyToken = (req, res, next) => {
         next();
     });
 };
+
+
+//validate User actions (is login? and have ok JWT)
+export const verifyUser = (req, res, next) => {
+    //1 check Token & 2 check User ID
+    verifyToken(req, res, next, () => {
+        //only owner User can delete acc or Admin!
+        if (req.user.id === req.params.id || req.user.isAdmin) {
+            next();
+        } else {
+            if (err) return next(createError(403, "You are not authorized (owner bro..)!"));
+        }
+    });
+};
+
+
+
+// is User = Admin?
+export const verifyAdmin = (req, res, next) => {
+    //1 check Token & 2 check is Admin?
+    verifyToken(req, res, next, () => {
+        //only  Admin can continued!
+        if (req.user.isAdmin) {
+            next();
+        } else {
+            if (err) return next(createError(403, "You are not authorized (not Admin)!"));
+        }
+    });
+};

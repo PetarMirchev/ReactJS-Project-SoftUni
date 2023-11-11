@@ -4,13 +4,25 @@ import { useState } from 'react';
 import FormInput from './components/FormInput';
 
 
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
+
 const Register = () => {
+
+  //navigate hock to navigate user to Home after successes login 
+  const navigate = useNavigate()
+
+
 
   //whit useState nonstop rerender when is input data in formInput
   const [values, setValues] = useState({  //use Object in useState to take over the big data
     username: "",
     email: "",
-    birthday: "",
+    country: "",
+    img: "",
+    city: "",
+    phone: "",
     password: "",
     confirmPassword: "",
 });
@@ -43,15 +55,46 @@ const inputs = [
   },
   {
     id: 3,
-    name: "birthday",
-    type: "date",
-    placeholder: "Birthday",
-    errorMessage: "Please select data!",
-    label: "Birthday",
+    name: "country",
+    type: "text",
+    placeholder: "Country",
+    errorMessage: "please enter country!",
+    label: "Country",
+    pattern: "^[A-Za-z]{2,16}$",
     required: true,
   },
   {
     id: 4,
+    name: "img",
+    type: "text",
+    placeholder: "avatar img link",
+    errorMessage: "please enter image URL!",
+    label: "img",
+    // pattern: "/^https?:\/\/.+$/",
+    required: true,
+  },
+  {
+    id: 5,
+    name: "city",
+    type: "text",
+    placeholder: "City",
+    errorMessage: "please enter city!",
+    label: "City",
+    pattern: "^[A-Za-z]{2,16}$",
+    required: true,
+  },
+  {
+    id: 6,
+    name: "phone",
+    type: "text",
+    placeholder: "Phone number",
+    errorMessage: "please enter phone number!",
+    label: "Phone",
+    pattern: "^[0-9]{7,20}$",
+    required: true,
+  },
+  {
+    id: 7,
     name: "password",
     type: "password",
     placeholder: "Password",
@@ -61,7 +104,7 @@ const inputs = [
     required: true,
   },
   {
-    id: 5,
+    id: 8,
     name: "confirmPassword",
     type: "password",
     placeholder: "Confirm Password",
@@ -74,21 +117,19 @@ const inputs = [
 
 
 //function to prevent refresh the page after submit and pass DATA to BackEnd
-const handleSubmit = (e) => {
+const handleSubmit = async (e) => {
   e.preventDefault(); //this line prevent refreshing the page after click
-  
-  // example for dat function send data to DB (MySQL?) like dat:
-  // const handleClick = async (e) => {
-  //   e.preventDefault(); //this line prevent refreshing the page after click
-  //     try{
-  //       await axios.post("http://localhost:8800/register", inputData)
-  //       //after finish new data input navigate USER to home "/" or LOGIN....
-  //       navigate("/");
-  //     } 
-  //     catch(err) {
-  //       console.log(err,"inputData Error!");
-  //     }
-  // }
+
+      try{
+          const inputData = values;
+          console.log(inputData);
+          await axios.post("http://localhost:8800/api/auth/register", inputData)
+          //after finish new data input navigate USER to home "/" or LOGIN....
+          navigate("/");
+        } 
+        catch(err) {
+          console.log(err,"inputData Error!");
+        }
 }
 
 
