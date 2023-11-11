@@ -10,6 +10,8 @@ router.post('/register', register);
 //http://localhost:8800/api/auth/login
 router.post('/login', login);
 
+// //http://localhost:8800/api/auth/logout
+// router.get('/logout', logout);
 
 
 

@@ -4,7 +4,17 @@ import { Link } from "react-router-dom";
 import logoImg from './logo.png';
 
 
+
 const Navbar1 = () => {
+
+
+    const logoutHandler = async (e) => {
+        e.preventDefault(); //this line prevent refreshing the page after click
+      
+
+      }
+
+
   return (
     <div >
 
@@ -25,28 +35,17 @@ const Navbar1 = () => {
                             <li><Link to="/shop">Shop</Link></li>
                             <li ><Link to="/about">About</Link></li>
                             <li ><Link to="/contact">Contact</Link></li>
-                            {/* <li className="submenu">
-                                <a href="javascript:;">Pages</a>
-                                <ul>
-                                    <li><a href="about.html">About Us</a></li>
-                                    <li><a href="products.html">Products</a></li>
-                                    <li><a href="single-product.html">Single Product</a></li>
-                                    <li><a href="contact.html">Contact Us</a></li>
-                                </ul>
-                            </li> */}
-                            {/* <li className="submenu">
-                                <a href="javascript:;">Features</a>
-                                <ul>
-                                    <li><a href="#">Features Page 1</a></li>
-                                    <li><a href="#">Features Page 2</a></li>
-                                    <li><a href="#">Features Page 3</a></li>
-                                    <li><a rel="nofollow" href="https://templatemo.com/page/4" target="_blank">Template Page 4</a></li>
-                                </ul>
-                            </li> */}
-                            <li ><Link to="/register">Register</Link></li>
-                            <li ><Link to="/login">Login</Link></li>
-                            <li ><Link to="/logout">Logout</Link></li>
-                            <li ><Link to="/profile">My Account</Link></li>
+
+                            {/* if is no "user" (log in) show dis div down (login/register buttons), if is "user" show his name */}
+                            <div><li ><Link to="/profile">My Account</Link></li></div>
+                                <div>
+                                    <li ><Link to="/register">Register</Link></li>
+                                    <li ><Link to="/login">Login</Link></li>
+                                    <li ><Link to="/logout" onClick={logoutHandler}>Logout</Link></li>
+                                      
+                                    </div>
+    
+                            
                         </ul>        
     
                         {/* <!-- ***** Menu End ***** --> */}
