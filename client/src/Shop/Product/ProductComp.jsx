@@ -1,11 +1,21 @@
 import React from 'react'
 import './product.css';
+import CardBox from './CardBox';
 
-const ProductComp = () => {
+
+const ProductComp = ({searchResults}) => {
+
+    //call <CardBox/> & render all elements!
+    const results = searchResults.map(post => <CardBox key={post.id} post={post}/>);
+
+     // return the content -> 1 check is some kind of result -> no result, display message 'no data'
+     const content = results?.length ? results: <article><h2 id='no-result-search'>Sorry... No Matching to your Search!</h2></article>
+
+
+
+
   return (
 <div className='buffer1'>
-
-
 
     <section className="section" id="products">
         <div className="container">
@@ -18,34 +28,22 @@ const ProductComp = () => {
                 </div>
             </div>
         </div>
+
+    
         <div className="container">
             <div className="row">
-                <div className="col-lg-4">
-                    <div className="item">
-                        <div className="thumb">
-                            <div className="hover-content">
-                                <ul>
-                                    <li><a href="/shop/:productId"><i className="fa fa-eye"></i></a></li>
-                                    <li><a href="/shop/:productId"><i className="fa fa-star"></i></a></li>
-                                    <li><a href="/shop/:productId"><i className="fa fa-shopping-cart"></i></a></li>
-                                </ul>
-                            </div>
-                            <img src="images/men-01.jpg" alt="one"/>
-                        </div>
-                        <div className="down-content">
-                            <h4>ClassNameic Spring</h4>
-                            <span>$120.00</span>
-                            <ul className="stars">
-                                <li><i className="fa fa-star"></i></li>
-                                <li><i className="fa fa-star"></i></li>
-                                <li><i className="fa fa-star"></i></li>
-                                <li><i className="fa fa-star"></i></li>
-                                <li><i className="fa fa-star"></i></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-lg-4">
+               
+                
+               {/* ------>render Card hear! <CardBox/> <--------*/}
+                                 {content}
+                {/* ****---------->      <----------------------**** */}
+
+
+
+
+
+
+                {/* <div className="col-lg-4">
                     <div className="item">
                         <div className="thumb">
                             <div className="hover-content">
@@ -69,8 +67,12 @@ const ProductComp = () => {
                             </ul>
                         </div>
                     </div>
-                </div>
-                <div className="col-lg-4">
+                </div> */}
+
+
+
+
+                {/* <div className="col-lg-4">
                     <div className="item">
                         <div className="thumb">
                             <div className="hover-content">
@@ -95,6 +97,8 @@ const ProductComp = () => {
                         </div>
                     </div>
                 </div>
+
+
                 <div className="col-lg-4">
                     <div className="item">
                         <div className="thumb">
@@ -120,6 +124,8 @@ const ProductComp = () => {
                         </div>
                     </div>
                 </div>
+
+
                 <div className="col-lg-4">
                     <div className="item">
                         <div className="thumb">
@@ -145,6 +151,8 @@ const ProductComp = () => {
                         </div>
                     </div>
                 </div>
+
+
                 <div className="col-lg-4">
                     <div className="item">
                         <div className="thumb">
@@ -170,6 +178,9 @@ const ProductComp = () => {
                         </div>
                     </div>
                 </div>
+
+
+
                 <div className="col-lg-4">
                     <div className="item">
                         <div className="thumb">
@@ -195,6 +206,8 @@ const ProductComp = () => {
                         </div>
                     </div>
                 </div>
+
+
                 <div className="col-lg-4">
                     <div className="item">
                         <div className="thumb">
@@ -220,6 +233,8 @@ const ProductComp = () => {
                         </div>
                     </div>
                 </div>
+
+
                 <div className="col-lg-4">
                     <div className="item">
                         <div className="thumb">
@@ -243,8 +258,12 @@ const ProductComp = () => {
                                 <li><i className="fa fa-star"></i></li>
                             </ul>
                         </div>
-                    </div>
-                </div>
+                    </div> 
+                </div>*/}
+
+
+
+
                 <div className="col-lg-12">
                     <div className="pagination">
                         <ul>
