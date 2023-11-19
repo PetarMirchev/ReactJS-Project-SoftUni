@@ -14,6 +14,7 @@ import ShopPage from "./Shop/ShopPage";
 
 import SingleProduct from "./SingleProductPage/SingleProduct";
 import ProfilePage from "./ProfilePage/Profile";
+import CreateProductPage from "./CreateProductAdminPage/CreateProductPage";
 
 
 
@@ -32,12 +33,14 @@ import ProfilePage from "./ProfilePage/Profile";
       <Navbar1/>
         <Routes>
             <Route path="/" element={<HomePage/>} />
+
             <Route path="register" element={<Register/>} />
-
             <Route path="login" element={<Login/>} setUser={setUser} />
-            <Route path="profile" element={<ProfilePage user={user}/>} />
 
+            <Route path="profile" element={<ProfilePage user={user}/>} />
             <Route path="logout" element={<HomePage/>} />
+            <Route path="create" element={<CreateProductPage/>} />
+
             <Route path="about" element={<AboutPage/>} />
             <Route path="contact" element={<ContactPage/>} /> 
             <Route path="shop" element={<ShopPage/>} />             

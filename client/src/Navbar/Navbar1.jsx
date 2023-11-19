@@ -35,17 +35,17 @@ const Navbar1 = () => {
                             <li><Link to="/shop">Shop</Link></li>
                             <li ><Link to="/about">About</Link></li>
                             <li ><Link to="/contact">Contact</Link></li>
+                            
 
                             {/* if is no "user" (log in) show dis div down (login/register buttons), if is "user" show his name */}
-                            <div><li ><Link to="/profile">My Account</Link></li></div>
-                                <div>
+                                    <li ><Link to="/profile">My Account</Link></li>
+                                                                    
                                     <li ><Link to="/register">Register</Link></li>
                                     <li ><Link to="/login">Login</Link></li>
-                                    <li ><Link to="/logout" onClick={logoutHandler}>Logout</Link></li>
-                                      
-                                    </div>
-    
-                            
+                                    <li ><Link to="/logout" onClick={logoutHandler}>Logout</Link></li> 
+                                    
+                                    {/* for admin to add/create new items               */}
+                                    <li ><Link to="/create">Create/Add</Link></li>               
                         </ul>        
     
                         {/* <!-- ***** Menu End ***** --> */}
