@@ -2,7 +2,17 @@ import React from 'react';
 import './contact.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+
+
+
 const ContactPage = () => {
+
+
+  const onSendHandler = (e) => {
+    e.preventDefault();
+  }
+
+
   return (
     <div>
 
@@ -55,7 +65,7 @@ const ContactPage = () => {
                                 </fieldset>
                               </div>
                               <div className="col-lg-12">
-                                  <button type="submit" id="form-submit" className="main-dark-button"><FontAwesomeIcon icon="fa-light fa-paper-plane" />Send</button>
+                                  <button type="submit" id="form-submit" className="main-dark-button"><FontAwesomeIcon icon="fa-light fa-paper-plane" onClick={onSendHandler} />Send</button>
                               </div>
                             </div>
                           </form>
