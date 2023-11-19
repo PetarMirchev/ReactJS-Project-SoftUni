@@ -15,6 +15,7 @@ import ShopPage from "./Shop/ShopPage";
 import SingleProduct from "./SingleProductPage/SingleProduct";
 import ProfilePage from "./ProfilePage/Profile";
 import CreateProductPage from "./CreateProductAdminPage/CreateProductPage";
+import CartPage from "./CartPage/CartPage";
 
 
 
@@ -46,6 +47,7 @@ import CreateProductPage from "./CreateProductAdminPage/CreateProductPage";
             <Route path="shop" element={<ShopPage/>} />             
             <Route path="shop/:productId" element={<SingleProduct/>} />
             
+            <Route path="cart" element={<CartPage/>} />
 
             <Route path="*" element={<Page404 />} />   
         </Routes>

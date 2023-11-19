@@ -1,0 +1,136 @@
+.cart-page-wrapper{
+    margin-top: 110px;
+    background: #ddd;
+    min-height: 600px;
+    vertical-align: middle;
+    display: flex;
+    font-family: sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+.cart-page-wrapper .title{
+    margin-bottom: 5vh;
+}
+.cart-page-wrapper .card{
+    margin: auto;
+    max-width: 950px;
+    width: 90%;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 1rem;
+    border: transparent;
+}
+
+.cart-page-wrapper .cart{
+    background-color: #fff;
+    padding: 4vh 5vh;
+    border-bottom-left-radius: 1rem;
+    border-top-left-radius: 1rem;
+}
+
+.cart-page-wrapper .summary{
+    /* background-color: #ddd; */
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    padding: 4vh;
+    color: rgb(65, 65, 65);
+}
+
+.cart-page-wrapper .summary .col-2{
+    padding: 0;
+}
+.cart-page-wrapper .summary .col-10
+{
+    padding: 0;
+}
+
+.cart-page-wrapper .row{
+    margin: 0;
+}
+.cart-page-wrapper .title b{
+    font-size: 1.5rem;
+}
+
+.cart-page-wrapper .col-2, .col{
+    padding: 0 1vh;
+}
+
+.cart-page-wrapper a{
+    padding: 0 1vh;
+}
+.cart-page-wrapper .close{
+    margin-left: auto;
+    font-size: 0.7rem; 
+    padding-top: 15px;
+    padding-left: 10px;
+
+}
+.cart-page-wrapper img{
+    width: 3.5rem;
+}
+.cart-page-wrapper .back-to-shop .text-muted{
+    margin-top: 125px;
+}
+.cart-page-wrapper h5{
+    margin-top: 4vh;
+}
+.cart-page-wrapper hr{
+    margin-top: 1.25rem;
+}
+.cart-page-wrapper form{
+    padding: 2vh 0;
+}
+.cart-page-wrapper select{
+    border: 1px solid rgba(0, 0, 0, 0.137);
+    padding: 1.5vh 1vh;
+    margin-bottom: 4vh;
+    outline: none;
+    width: 100%;
+    background-color: rgb(247, 247, 247);
+}
+.cart-page-wrapper input{
+    border: 1px solid rgba(0, 0, 0, 0.137);
+    padding: 1vh;
+    margin-bottom: 4vh;
+    outline: none;
+    width: 100%;
+    background-color: rgb(247, 247, 247);
+}
+
+.cart-page-wrapper input:focus::-webkit-input-placeholder
+{
+      color:transparent;
+}
+
+.cart-page-wrapper .btn-checkout{
+    background-color: #000;
+    border-color: #000;
+    color: white;
+    width: 100%;
+    font-size: 0.7rem;
+    margin-top: 4vh;
+    padding: 1vh;
+    border-radius: 0;
+}
+.cart-page-wrapper .btn-checkout:focus{
+    background-color: green;
+    color: white;
+}
+.cart-page-wrapper .btn-checkout:hover{
+    color: black;
+    background-color: rgb(68, 234, 68);
+    font-weight: 800;
+}
+.cart-page-wrapper a{
+    color: black; 
+}
+.cart-page-wrapper a:hover{
+    color: black;
+    text-decoration: none;
+}
+
+
+#total-price{
+    font-weight:800;
+}
