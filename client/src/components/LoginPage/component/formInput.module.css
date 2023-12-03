@@ -1,0 +1,34 @@
+.formInput{
+    display: flex;
+    flex-direction: column;  
+    width: 280px;
+    height: 135px;
+}
+
+
+input{
+    padding: 15px;
+    margin: 30px 0px; 
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+/************************************************************************************************/
+/* block to show error message on form validation, base on 'focused' status */
+/* span{ */
+.error-message{
+    font-size: 11px;
+    color: red;
+    padding: 1px;
+    display: none;
+}
+
+input:invalid[focused="true"] ~ .error-message {
+    display: block;
+}
+
+/* red border marking incorrect field input  */
+input:invalid[focused="true"]{
+    border: 1px solid red;
+}
+/**********************************************************************************************/

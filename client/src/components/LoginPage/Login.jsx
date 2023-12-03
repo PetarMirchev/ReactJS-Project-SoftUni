@@ -3,14 +3,19 @@ import Google from "./google.png";
 import Facebook from "./facebook.png";
 import Github from "./github.png";
 import './login.css'; 
-
+import { useNavigate } from "react-router-dom";
 import AuthContext from '../../context/AuthContext';
-import useForm from '../../hooks/useForm';
-
-
-
+import { useState } from 'react';
+import FormInput from './component/FormInputLogin';
 
 const Login = () => {
+
+  const navigate = useNavigate();
+
+  const { loginSubmitHandler } = useContext(AuthContext);
+
+
+
   //call google login dialog box
   const google = () => {
     // window.open("http://localhost:5000/auth/google", "_self");
@@ -24,16 +29,62 @@ const Login = () => {
 
   //*********************************************************************************** */
   
-  
-  //login user by 'acc' & 'pass' logic:
-  const { loginSubmitHandler } = useContext(AuthContext);
-  const { values, onChange, onSubmit } = useForm(loginSubmitHandler, { 
-    email: '', 
-    password: '',
-  });
-  
+  const inputs = [
+    {
+      id: 1,
+      name: "email",
+      type: "email",
+      placeholder: "Email",
+      errorMessage: "valid email !",
+      label: "Email",
+      pattern: "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}",
+      required: true,
+    },
+    {
+      id: 2,
+      name: "password",
+      type: "password",
+      placeholder: "Password",
+      errorMessage:"incorrect password!",
+      label: "Password",
+      //pattern: `^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`,
+      required: true,
+    },
+  ];
 
 
+  //*********************************************************************************** */
+
+//pass input data from user to useState using
+const onChange = (e) => {
+  setValues({ ...values, [e.target.name]: e.target.value });
+};
+
+const [values, setValues] = useState({  //use Object in useState to take over the big data
+  email: "",
+  password: "",
+});
+
+
+//function to prevent refresh the page after submit and pass DATA to BackEnd
+const handleSubmit = async (e) => {
+  e.preventDefault(); //this line prevent refreshing the page after click
+      try{
+          const inputData = values;
+          // console.log({inputData});
+          // console.log({...inputData});
+          loginSubmitHandler(inputData)
+
+          // await axios.post("http://localhost:8800/api/auth/register", inputData)
+          //after finish new data input navigate USER to home "/" or LOGIN....
+          navigate("/");
+        } 
+        catch(err) {
+          console.log(err,"inputData Error!");
+        }
+}
+ 
+//*********************************************************************************** */
 
   return (
     <div className="login">
@@ -58,27 +109,12 @@ const Login = () => {
           <div className="or">OR</div>
         </div>
         <div className="right">
-          <form onSubmit={onSubmit}>
-            <input 
-              className="input-fields" 
-              type="text" 
-              placeholder="email" 
-              id="email" 
-              name="email"
-              value={values.email}
-              onChange={onChange}
-            />
-            <input 
-              className="input-fields" 
-              type="password" 
-              placeholder="password" 
-              id="password"
-              name="password"
-              value={values.password}
-              onChange={onChange}
-            />
-            <button className="submitBTN" type="submit">Login</button>
-          </form>
+        <form onSubmit={handleSubmit}>
+          {inputs.map(input => (
+            <FormInput key={input.id} {...input} value={values[input.name]} onChange={onChange}/>
+          ))}  
+          <button className="submitBTN" type="submit">Login</button>
+        </form>
 
           {/* after logon operation is error, whe show error message whit next line */}
           {/* {error && <span>{error.message}</span>} */}

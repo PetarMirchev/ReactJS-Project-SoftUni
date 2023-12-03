@@ -50,6 +50,7 @@ const inputs = [
     placeholder: "Email",
     errorMessage: "Need to be valid email address ... !",
     label: "Email",
+    pattern: "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}",
     required: true,
   },
   {
@@ -69,7 +70,7 @@ const inputs = [
     placeholder: "avatar img link",
     errorMessage: "please enter image URL!",
     label: "img",
-    // pattern: "/^https?:\/\/.+$/",
+    pattern: "https?://.*",
     required: true,
   },
   {
@@ -139,7 +140,7 @@ const handleSubmit = async (e) => {
 const onChange = (e) => {
   setValues({ ...values, [e.target.name]: e.target.value });
 };
-console.log(values);
+//console.log(values);
 
 
 

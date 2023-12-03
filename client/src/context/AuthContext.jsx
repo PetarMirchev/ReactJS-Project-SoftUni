@@ -15,10 +15,9 @@ export const AuthProvider = ({ children }) => {
 
 
     const loginSubmitHandler = async ( values ) => {
-        //first step - login user in the server and get session ID from server
-        console.log(values);
+        //first step - login user in the server and get session ID from server  
         const result = await authService.login(values.email, values.password);
-        console.log(result);
+        
         // second step - set information in custom hook to be saved & check if is still in youse
         setAuth(result);
 
