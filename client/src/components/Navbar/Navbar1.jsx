@@ -7,14 +7,6 @@ import logoImg from './logo.png';
 
 const Navbar1 = () => {
 
-
-    const logoutHandler = async (e) => {
-        e.preventDefault(); //this line prevent refreshing the page after click
-      
-
-      }
-
-
   return (
     <div >
 
@@ -42,7 +34,7 @@ const Navbar1 = () => {
                                                                     
                                     <li ><Link to="/register">Register</Link></li>
                                     <li ><Link to="/login">Login</Link></li>
-                                    <li ><Link to="/logout" onClick={logoutHandler}>Logout</Link></li> 
+                                    <li ><Link to="/logout">Logout</Link></li> 
                                     
                                     {/* for admin to add/create new items               */}
                                     <li ><Link to="/create">Create/Add</Link></li>

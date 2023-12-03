@@ -1,5 +1,7 @@
-import React from 'react';
+import { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import * as authService from '../../services/authService';
+import AuthContext from '../../context/AuthContext';
 
 const Logout = () => {
 
@@ -11,9 +13,10 @@ const Logout = () => {
             .then(() => {
                 logoutHandler();
                 navigate('/');
-            }).catch(() => { 
+            }).catch((err) => { 
                 logoutHandler(); //! on error auto logout user & clear cookies!
                 navigate('/');
+                console.log(err);
             })
     }, []);
 
