@@ -17,9 +17,8 @@ import ProfilePage from "./components/ProfilePage/Profile";
 import CreateProductPage from "./components/CreateProductAdminPage/CreateProductPage";
 import CartPage from "./components/CartPage/CartPage";
 
+import { AuthProvider } from './context/AuthContext';
 
-
-//! user profile page --> TO DO //user staff - new template to be switched !
 //! search component  to be implemented in 'Shop/Filter/Filter.jsx'
   
 
@@ -29,29 +28,31 @@ import CartPage from "./components/CartPage/CartPage";
 
   return (
 
+ 
     <BrowserRouter>
+      <AuthProvider>
+        <Navbar1/>
+          <Routes>
+              <Route path="/" element={<HomePage/>} />
 
-      <Navbar1/>
-        <Routes>
-            <Route path="/" element={<HomePage/>} />
+              <Route path="register" element={<Register/>} />
+              <Route path="login" element={<Login/>} setUser={setUser} />
 
-            <Route path="register" element={<Register/>} />
-            <Route path="login" element={<Login/>} setUser={setUser} />
+              <Route path="profile" element={<ProfilePage user={user}/>} />
+              <Route path="logout" element={<HomePage/>} />
+              <Route path="create" element={<CreateProductPage/>} />
 
-            <Route path="profile" element={<ProfilePage user={user}/>} />
-            <Route path="logout" element={<HomePage/>} />
-            <Route path="create" element={<CreateProductPage/>} />
+              <Route path="about" element={<AboutPage/>} />
+              <Route path="contact" element={<ContactPage/>} /> 
+              <Route path="shop" element={<ShopPage/>} />             
+              <Route path="shop/:productId" element={<SingleProduct/>} />
+              
+              <Route path="cart" element={<CartPage/>} />
 
-            <Route path="about" element={<AboutPage/>} />
-            <Route path="contact" element={<ContactPage/>} /> 
-            <Route path="shop" element={<ShopPage/>} />             
-            <Route path="shop/:productId" element={<SingleProduct/>} />
-            
-            <Route path="cart" element={<CartPage/>} />
-
-            <Route path="*" element={<Page404 />} />   
-        </Routes>
-      <Footer/>
+              <Route path="*" element={<Page404 />} />   
+          </Routes>
+        <Footer/>
+      </AuthProvider>
     </BrowserRouter>
   );
 }

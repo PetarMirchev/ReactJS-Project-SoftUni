@@ -1,14 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import Google from "./google.png";
 import Facebook from "./facebook.png";
 import Github from "./github.png";
 import './login.css'; 
 
+import AuthContext from '../../context/AuthContext';
+import useForm from '../../hooks/useForm';
 
-import { AuthContext } from "../../context/AuthContext";
-import { useNavigate } from "react-router-dom";
-import { useState, useContext } from 'react';
-import axios from "axios";
 
 
 
@@ -28,36 +26,14 @@ const Login = () => {
   
   
   //login user by 'acc' & 'pass' logic:
-
-  const [credentials, setCredentials] = useState({
-    username: undefined,
-    password: undefined,
+  const { loginSubmitHandler } = useContext(AuthContext);
+  const { values, onChange, onSubmit } = useForm(loginSubmitHandler, { 
+    email: '', 
+    password: '',
   });
-
-  const { loading, error, dispatch } = useContext(AuthContext);
   
-  //navigate hock to navigate user to Home after successes login 
-  const navigate = useNavigate()
-
-  //btn function 
-  const handleChange = (e) => {
-      setCredentials((prev) => ({ ...prev, [e.target.id]: e.target.value }));
-  };
 
 
-    //init login process
-    const handleClick = async (e) => {
-        e.preventDefault();
-        dispatch({ type: "LOGIN_START" });
-        try {
-            const res = await axios.post("http://localhost:8800/auth/login", credentials);
-            dispatch({ type: "LOGIN_SUCCESS", payload: res.data.details });
-            console.log(res);
-            navigate("/")
-        } catch (err) {
-            dispatch({ type: "LOGIN_FAILURE", payload: err.response.data });
-        }
-    };
 
   return (
     <div className="login">
@@ -82,12 +58,30 @@ const Login = () => {
           <div className="or">OR</div>
         </div>
         <div className="right">
-          <input className="input-fields" type="text" placeholder="username" id="username" onChange={handleChange}/>
-          <input className="input-fields" type="password" placeholder="password" id="password" onChange={handleChange}/>
-          <button className="submitBTN" disabled={loading} onClick={handleClick}>Login</button>
-          
+          <form onSubmit={onSubmit}>
+            <input 
+              className="input-fields" 
+              type="text" 
+              placeholder="email" 
+              id="email" 
+              name="email"
+              value={values.email}
+              onChange={onChange}
+            />
+            <input 
+              className="input-fields" 
+              type="password" 
+              placeholder="password" 
+              id="password"
+              name="password"
+              value={values.password}
+              onChange={onChange}
+            />
+            <button className="submitBTN" type="submit">Login</button>
+          </form>
+
           {/* after logon operation is error, whe show error message whit next line */}
-          {error && <span>{error.message}</span>}
+          {/* {error && <span>{error.message}</span>} */}
         </div>
       </div>
     </div>
