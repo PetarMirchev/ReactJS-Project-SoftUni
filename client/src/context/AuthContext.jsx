@@ -31,12 +31,13 @@ export const AuthProvider = ({ children }) => {
 
     
     const registerSubmitHandler = async ( values ) => {
-        const result = await authService.register(values.email, values.password);
+        console.log(values);
+        //! password to be Encrypted!
+        const result = await authService.register( values.email, values.username, values.country, values.img, values.city, values.phone, values.password);
 
         setAuth(result);
-
+        console.log(result);
         localStorage.setItem('accessToken', result.accessToken);
-
         navigate('/'); //Path.Home
     };
     
@@ -44,6 +45,7 @@ export const AuthProvider = ({ children }) => {
     const logoutHandler = () => {
         setAuth({});
         localStorage.removeItem('accessToken');
+        // localStorage.removeItem('auth');
     };
 
 
@@ -53,6 +55,10 @@ export const AuthProvider = ({ children }) => {
         logoutHandler,
         username:  auth.username || auth.email,
         email: auth.email,
+        country: auth.country || auth.null,
+        img: auth.img || auth.null,
+        city: auth.city || auth.null,
+        phone: auth.phone || auth.null,
         userId: auth._id,
         isAuthenticated: !!auth.accessToken,
     }

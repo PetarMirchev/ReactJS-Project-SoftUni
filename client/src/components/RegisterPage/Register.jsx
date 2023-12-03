@@ -1,18 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './register.css';
 import { useState } from 'react';
 import FormInput from './components/FormInput';
 
-
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import  AuthContext from '../../context/AuthContext';
 
 
 const Register = () => {
-
   //navigate hock to navigate user to Home after successes login 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
+  const { registerSubmitHandler } = useContext(AuthContext);
 
 
   //whit useState nonstop rerender when is input data in formInput
@@ -122,8 +121,11 @@ const handleSubmit = async (e) => {
 
       try{
           const inputData = values;
-          console.log(inputData);
-          await axios.post("http://localhost:8800/api/auth/register", inputData)
+          // console.log({inputData});
+          // console.log({...inputData});
+          registerSubmitHandler(inputData)
+
+          // await axios.post("http://localhost:8800/api/auth/register", inputData)
           //after finish new data input navigate USER to home "/" or LOGIN....
           navigate("/");
         } 

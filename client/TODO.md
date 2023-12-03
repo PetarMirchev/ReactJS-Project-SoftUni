@@ -1,5 +1,7 @@
 # main:
-# 1 - config SoftUni back-end server  -- done 
+
+# 1 - password to be Encrypted!
+
 # 2 - add CRUD logic on products & validation on forms
 # 2.1 - add dummy data in server for rendering purposes
 # 3 - add user registration and login whit back-end server

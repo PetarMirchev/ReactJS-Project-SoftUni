@@ -1,6 +1,6 @@
 
 //!custom helper logic for creating requests for server (simulates similar interface as AXIOS in use .get(...))
-const buildOptions = (data) => { // support build request body & headers
+const buildOptions = (data) => { // support build request1 body & headers
     const options = {};
 
     if(data) {
@@ -22,7 +22,7 @@ const buildOptions = (data) => { // support build request body & headers
     return options;
 };
 
-const request = async (method, url, data) => {
+const request1 = async (method, url, data) => {
     const response = await fetch(url, {
         ...buildOptions(data),
         method, // 'GET', 'POST'....
@@ -43,8 +43,8 @@ const request = async (method, url, data) => {
     return result;
 };
 
-export const get = request.bind( null, 'GET');
-export const post = request.bind(null, 'POST');
-export const put = request.bind(null, 'PUT');
-export const remove = request.bind(null, 'DELETE');
-export const patch = request.bind(null, 'PATCH');
+export const get = request1.bind( null, 'GET');
+export const post = request1.bind(null, 'POST');
+export const put = request1.bind(null, 'PUT');
+export const remove = request1.bind(null, 'DELETE');
+export const patch = request1.bind(null, 'PATCH');
