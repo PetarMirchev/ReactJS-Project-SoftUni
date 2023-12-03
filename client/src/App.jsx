@@ -2,20 +2,20 @@ import { Routes, Route } from "react-router-dom";
 import { BrowserRouter } from "react-router-dom";
 import { useState } from "react";
 
-import Navbar1 from "./Navbar/Navbar1";
-import Footer  from "./Footer/Footer1";
-import ContactPage from "./ContactPage/ContactPage";
-import AboutPage from "./AboutPage/AboutPage";
-import Register from "./RegisterPage/Register";
-import Login from "./LoginPage/Login";
-import Page404 from "./Page404/Page404";
-import HomePage from "./HomePage/HomePage";
-import ShopPage from "./Shop/ShopPage";
+import Navbar1 from "./components/Navbar/Navbar1";
+import Footer  from "./components/Footer/Footer1";
+import ContactPage from "./components/ContactPage/ContactPage";
+import AboutPage from "./components/AboutPage/AboutPage";
+import Register from "./components/RegisterPage/Register";
+import Login from "./components/LoginPage/Login";
+import Page404 from "./components/Page404/Page404";
+import HomePage from "./components/HomePage/HomePage";
+import ShopPage from "./components/Shop/ShopPage";
 
-import SingleProduct from "./SingleProductPage/SingleProduct";
-import ProfilePage from "./ProfilePage/Profile";
-import CreateProductPage from "./CreateProductAdminPage/CreateProductPage";
-import CartPage from "./CartPage/CartPage";
+import SingleProduct from "./components/SingleProductPage/SingleProduct";
+import ProfilePage from "./components/ProfilePage/Profile";
+import CreateProductPage from "./components/CreateProductAdminPage/CreateProductPage";
+import CartPage from "./components/CartPage/CartPage";
 
 
 

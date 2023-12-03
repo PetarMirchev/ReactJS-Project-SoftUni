@@ -5,7 +5,7 @@ import Github from "./github.png";
 import './login.css'; 
 
 
-import { AuthContext } from "../context/AuthContext";
+import { AuthContext } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { useState, useContext } from 'react';
 import axios from "axios";
