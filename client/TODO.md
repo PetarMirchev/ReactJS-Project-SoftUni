@@ -4,9 +4,7 @@
 
 # 2 - add CRUD logic on products & validation on forms
 # 2.1 - add dummy data in server for rendering purposes
-# 3 - add user registration and login whit back-end server
-# 4 - set user roles on routes
-# 5 - set route guards on routes!
+
 
 # 6 - create Shipping, Payment, Place Order 
 # 7 - pagination in ProductComp to be created (<-,1,2,3,4,->) down for products, when whe have many products (split on pages);

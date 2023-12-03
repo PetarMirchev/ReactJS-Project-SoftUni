@@ -33,7 +33,7 @@ About Us Page
     color: #2a2a2a;
   }
   
-  .about-us .right-content span {
+  .about-us .right-content{
     font-size: 14px;
     color: #aaaaaa;
     font-weight: 500;
@@ -178,7 +178,7 @@ About Us Page
     margin-bottom: 5px;
   }
   
-  .our-team .team-item .down-content span {
+  .our-team .team-item .down-content{
     font-size: 14px;
     color: #a1a1a1;
     font-weight: 500;

@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './profile.css';
+import AuthContext from '../../context/AuthContext'
 
 const Profile = () => {
+
+  const { username, email,  country, img, city, phone } = useContext(AuthContext);
+
   return (
     <div className='wind-container-up mt-8'>
         <br/>
@@ -9,9 +13,9 @@ const Profile = () => {
           <div className="row">
               <div className="col-md-3 border-right">
                   <div className="d-flex flex-column align-items-center text-center p-3 py-5">
-                    <img className="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg" />
-                    <p className="font-weight-bold">Ed Jeison</p>
-                    <p className="text-black-50">ed@mail.com.my</p>
+                    <img className="rounded-circle mt-5" width="150px" src={img}  alt='Spam-Random-User'/>
+                    <p className="font-weight-bold">{username}</p>
+                    <p className="text-black-50">{email}</p>
                     <p> </p>
                   </div>
               </div>
@@ -23,38 +27,34 @@ const Profile = () => {
                       <div className="row mt-2">
                           <div className="col-md-6">
                             <label className="labels">Name: </label>
-                            <p>user name</p>
+                            <p>{username}</p>
                           </div>
                           <div className="col-md-6">
                             <label className="labels">Surname: </label>
-                            <p>user surname</p>
+                            <p>{username}</p>
                           </div>
                       </div>
                       <div className="row mt-3">
                           <div className="col-md-12">
                             <label className="labels">Mobile Number: </label>
-                            <p>+359 7777 7777</p>
+                            <p>{phone}</p>
                           </div>
                           <div className="col-md-12">
                             <label className="labels">Address: </label>
-                            <p>Kill str. N:26</p>
+                            <p>{country} {city}</p>
                           </div>
-                        
-                          <div className="col-md-12">
-                            <label className="labels">Postcode: </label>
-                            <p>6999</p>
-                          </div>
+                                        
                           <div className="col-md-12">
                             <label className="labels">City: </label>
-                            <p>Hustan</p>
+                            <p>{city}</p>
                           </div>        
                           <div className="col-md-12">
                             <label className="labels">Email: </label>
-                            <p>random@abv.bg</p>
+                            <p>{email}</p>
                           </div>   
                           <div className="col-md-12">
                             <label className="labels">Country: </label>
-                            <p>Bulgaria</p>
+                            <p>{country}</p>
                           </div>                   
                       </div>
                       {/* <div className="row mt-3">

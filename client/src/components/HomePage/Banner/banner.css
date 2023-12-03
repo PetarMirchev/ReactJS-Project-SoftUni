@@ -30,7 +30,7 @@ banner
     margin-bottom: 20px;
   }
   
-  .main-banner .left-content .inner-content span {
+  .main-banner .left-content .inner-content{
     font-size: 16px;
     color: #fff;
     font-weight: 400;
@@ -68,7 +68,7 @@ banner
     margin-bottom: 15px;
   }
   
-  .main-banner .right-content .right-first-image .thumb .inner-content span {
+  .main-banner .right-content .right-first-image .thumb .inner-content {
     font-size: 16px;
     color: #fff;
     font-style: italic;

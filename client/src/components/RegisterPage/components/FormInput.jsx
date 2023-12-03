@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import "./formInput.css";
+import styles from "./formInput.module.css";
 
 const FormInput = (props) => {
 
@@ -16,7 +16,7 @@ const FormInput = (props) => {
   }
 
   return (
-    <div className='formInput'>
+    <div className={styles['formInput']}>
         <label>{label}</label>
           <input {...inputProps} 
                   onChange={onChange} 
@@ -24,7 +24,8 @@ const FormInput = (props) => {
                   onFocus={() => inputProps.name==="confirmPassword" && setFocused(true)} //if xx..name==="confirmPassword" set setFocused to TRUE --> for final field to show "Passwords don't match!" until is OK
                   focused={focused.toString()}
           />
-        <span>{errorMessage}</span>
+        <span className={styles['error-message']}>{errorMessage}</span>
+        {/* alternative style logic for .module.css  -->  <span className={styles.error-message}>...</span> */}
     </div>
   )
 }

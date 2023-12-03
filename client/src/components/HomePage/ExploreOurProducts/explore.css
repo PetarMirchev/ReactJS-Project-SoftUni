@@ -20,7 +20,7 @@ Explore
     color: #2a2a2a;
   }
   
-  #explore .left-content span {
+  #explore .left-content{
     font-size: 14px;
     color: #aaaaaa;
     font-weight: 500;
@@ -94,8 +94,8 @@ Explore
     margin-bottom: 5px;
   }
   
-  #explore .leather span,
-  #explore .types span {
+  #explore .leather,
+  #explore .types {
     font-size: 14px;
     font-style: italic;
     color: #3f3737;

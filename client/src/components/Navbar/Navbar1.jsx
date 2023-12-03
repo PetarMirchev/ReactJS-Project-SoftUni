@@ -30,14 +30,13 @@ const Navbar1 = () => {
                             <li><Link to="/shop">Shop</Link></li>
                             <li ><Link to="/about">About</Link></li>
                             <li ><Link to="/contact">Contact</Link></li>
-                            
 
                             {/* if is no "user" (log in) show dis div down (login/register buttons), if is "user" show his name */}
                                     {!isAuthenticated && (  
-                                        <div>                          
+                                        <span>                        
                                             <li><Link to="/register">Register</Link></li>
                                             <li><Link to="/login">Login</Link></li>
-                                        </div>
+                                        </span>  
                                     )}
 
                                     {isAuthenticated && (  
