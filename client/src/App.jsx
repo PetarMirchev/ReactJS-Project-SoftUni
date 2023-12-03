@@ -19,6 +19,7 @@ import CreateProductPage from "./components/CreateProductAdminPage/CreateProduct
 import CartPage from "./components/CartPage/CartPage";
 
 import { AuthProvider } from './context/AuthContext';
+import AuthGuard from "./guards/AuthGuard";
 
 //! search component  to be implemented in 'Shop/Filter/Filter.jsx'
   
@@ -34,10 +35,12 @@ import { AuthProvider } from './context/AuthContext';
               <Route path="/register" element={<Register/>} />
               <Route path="/login" element={<Login/>}/>
 
-              <Route path="/profile" element={<ProfilePage />} />
-              <Route path='/logout' element={<Logout/>} />
-              <Route path="/create" element={<CreateProductPage/>} />
-
+              <Route element={<AuthGuard/>}>
+                <Route path="/profile" element={<ProfilePage />} />
+                <Route path='/logout' element={<Logout/>} />
+                <Route path="/create" element={<CreateProductPage/>} />
+              </Route>
+              
               <Route path="/about" element={<AboutPage/>} />
               <Route path="/contact" element={<ContactPage/>} /> 
               <Route path="/shop" element={<ShopPage/>} />             
@@ -48,7 +51,7 @@ import { AuthProvider } from './context/AuthContext';
               <Route path="*" element={<Page404 />} />   
         </Routes>
           <Footer/>
-      </AuthProvider>
+        </AuthProvider>
       </BrowserRouter>
   );
 }

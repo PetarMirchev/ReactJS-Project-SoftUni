@@ -16,8 +16,9 @@ export const AuthProvider = ({ children }) => {
 
     const loginSubmitHandler = async ( values ) => {
         //first step - login user in the server and get session ID from server
+        console.log(values);
         const result = await authService.login(values.email, values.password);
-
+        console.log(result);
         // second step - set information in custom hook to be saved & check if is still in youse
         setAuth(result);
 
@@ -31,12 +32,12 @@ export const AuthProvider = ({ children }) => {
 
     
     const registerSubmitHandler = async ( values ) => {
-        console.log(values);
+        //console.log(values);
         //! password to be Encrypted!
-        const result = await authService.register( values.email, values.username, values.country, values.img, values.city, values.phone, values.password);
+        const result = await authService.register(  values.username, values.email, values.country, values.img, values.city, values.phone, values.password);
 
         setAuth(result);
-        console.log(result);
+        //console.log(result);
         localStorage.setItem('accessToken', result.accessToken);
         navigate('/'); //Path.Home
     };

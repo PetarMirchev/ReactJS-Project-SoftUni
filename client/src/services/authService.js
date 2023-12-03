@@ -4,9 +4,9 @@ const baseUrl = 'http://localhost:3030/users';
 
 
 export const register = async (  username, email, country, img, city, phone, password ) => {
-   const result = await requestLibMyAxios.post(`${baseUrl}/register`, {    
-        email, 
+   const result = await requestLibMyAxios.post(`${baseUrl}/register`, {       
         username,
+        email, 
         country,
         img,
         city,

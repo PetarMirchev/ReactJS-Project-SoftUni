@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './navbar.css';
 import { Link } from "react-router-dom";
 import logoImg from './logo.png';
+import AuthContext from '../../context/AuthContext';
 
 
 
 const Navbar1 = () => {
+
+    const {isAuthenticated, username, email} = useContext(AuthContext);
 
   return (
     <div >
@@ -30,14 +33,24 @@ const Navbar1 = () => {
                             
 
                             {/* if is no "user" (log in) show dis div down (login/register buttons), if is "user" show his name */}
-                                    <li ><Link to="/profile">My Account</Link></li>
-                                                                    
-                                    <li ><Link to="/register">Register</Link></li>
-                                    <li ><Link to="/login">Login</Link></li>
-                                    <li ><Link to="/logout">Logout</Link></li> 
+                                    {!isAuthenticated && (  
+                                        <div>                          
+                                            <li><Link to="/register">Register</Link></li>
+                                            <li><Link to="/login">Login</Link></li>
+                                        </div>
+                                    )}
+
+                                    {isAuthenticated && (  
+                                    <div>
+                                        <li><Link to="/profile">{username}</Link></li>
+                                        <li><Link to="/logout">Logout</Link></li> 
+                                    </div>
+                                    )}
                                     
-                                    {/* for admin to add/create new items               */}
+                                    {/* for admin to add/create new items    */}
+                                    {email === 'admin@abv.bg' &&(
                                     <li ><Link to="/create">Create/Add</Link></li>
+                                    )}
 
                                 {/* user CART (chosen items from user!)             */}
                                     <li >
