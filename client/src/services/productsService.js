@@ -17,17 +17,17 @@ export const getOne = async (elementId) =>{
     return result;
 };
 
-//! last 3 created items
-// export const getLatest = async () => {
-//     const query = new URLSearchParams({
-//         offset: 0,
-//         pageSize: 3,
-//     });
+//! last 4 created items
+export const getLatest = async () => {
+    const query = new URLSearchParams({
+        offset: -4,
+        pageSize: 4,
+    });
 
-//     const result = await requestLibMyAxios.get(`${baseUrl}?${query}`);
+    const result = await requestLibMyAxios.get(`${baseUrl}?${query}`);
     
-//     return result;
-// };
+    return result;
+};
 
 //*************************************************************************************************** */
 

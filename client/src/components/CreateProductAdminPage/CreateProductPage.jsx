@@ -29,9 +29,9 @@ const CreateProductPage = () => {
           name: "product",
           type: "text",
           placeholder: "enter product name",
-          errorMessage: "product name should be 2-16 characters (A-Z,a-z,0-9) and shouldn't include any special character! ",
+          errorMessage: "please write product name! ",
           label: "Product name",
-          pattern: "^[A-Za-z0-9]{2,16}$", //[A-Za-z0-9] -- start whit Capital letters, small letters or numbers |{3,16} -- min & max limit of required symbols //JS REGEX CODE !
+          pattern: "^[a-zA-Z0-9\s&'()\-]+$", //[A-Za-z0-9] -- start whit Capital letters, small letters or numbers |{3,16} -- min & max limit of required symbols //JS REGEX CODE !
           required: true,
         },
         {
@@ -61,7 +61,7 @@ const CreateProductPage = () => {
             placeholder: "price in $",
             errorMessage: "please enter price number!",
             label: "Price",
-            pattern: "^[0-9]{1,100}$",
+            pattern: "^[0-9]{1,100000}$",
             required: true,
         },
         {

@@ -1,6 +1,5 @@
 # main:
 
-# 1 - password to be Encrypted!
 
 # 2 - add CRUD logic on products & validation on forms
 # 2.1 - add dummy data in server for rendering purposes
