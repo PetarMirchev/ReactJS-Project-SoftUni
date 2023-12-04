@@ -68,19 +68,15 @@ const [values, setValues] = useState({  //use Object in useState to take over th
 
 //function to prevent refresh the page after submit and pass DATA to BackEnd
 const handleSubmit = async (e) => {
-  e.preventDefault(); //this line prevent refreshing the page after click
+  e.preventDefault();
       try{
           const inputData = values;
-          // console.log({inputData});
-          // console.log({...inputData});
-          loginSubmitHandler(inputData)
-
-          // await axios.post("http://localhost:8800/api/auth/register", inputData)
-          //after finish new data input navigate USER to home "/" or LOGIN....
+          loginSubmitHandler(inputData);
           navigate("/");
         } 
         catch(err) {
           console.log(err,"inputData Error!");
+          navigate('*'); //'/404'
         }
 }
  

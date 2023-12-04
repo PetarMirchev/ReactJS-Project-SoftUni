@@ -13,32 +13,46 @@ export const AuthProvider = ({ children }) => {
 
 
 
-
     const loginSubmitHandler = async ( values ) => {
-        //first step - login user in the server and get session ID from server  
-        const result = await authService.login(values.email, values.password);
-        
-        // second step - set information in custom hook to be saved & check if is still in youse
-        setAuth(result);
+        try {
+            //first step - login user in the server and get session ID from server  
+            const result = await authService.login(values.email, values.password);
+            
+            // second step - set information in custom hook to be saved & check if is still in youse
+            setAuth(result);
+    
+            // third step - save token in 'localStorage --> 'accessToken''
+            localStorage.setItem('accessToken', result.accessToken);
+    
+            navigate('/'); // or (Path.Home) whiteout magic strings!
 
-        // third step - save token in 'localStorage --> 'accessToken''
-        localStorage.setItem('accessToken', result.accessToken);
-
-        navigate('/'); // or (Path.Home) whiteout magic strings!
+        } catch (error) {
+            console.log(error, 'error on login - user not found');
+            setAuth({});
+            localStorage.removeItem('accessToken');
+            navigate('/login');
+        }
     };
 
 
 
     
     const registerSubmitHandler = async ( values ) => {
-        //console.log(values);
-        //! password to be Encrypted!
-        const result = await authService.register(  values.username, values.email, values.country, values.img, values.city, values.phone, values.password);
 
-        setAuth(result);
-        //console.log(result);
-        localStorage.setItem('accessToken', result.accessToken);
-        navigate('/'); //Path.Home
+        try {
+            //console.log(values);
+            //! password to be Encrypted!
+            const result = await authService.register(  values.username, values.email, values.country, values.img, values.city, values.phone, values.password);
+    
+            setAuth(result);
+            //console.log(result);
+            localStorage.setItem('accessToken', result.accessToken);
+            navigate('/'); //Path.Home           
+        } catch (error) {
+            setAuth({});
+            localStorage.removeItem('accessToken');
+            navigate('*');
+        }
     };
     
 

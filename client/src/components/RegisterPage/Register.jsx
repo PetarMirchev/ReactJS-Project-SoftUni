@@ -118,12 +118,10 @@ const inputs = [
 
 //function to prevent refresh the page after submit and pass DATA to BackEnd
 const handleSubmit = async (e) => {
-  e.preventDefault(); //this line prevent refreshing the page after click
+  e.preventDefault();
 
       try{
           const inputData = values;
-          // console.log({inputData});
-          // console.log({...inputData});
           registerSubmitHandler(inputData)
 
           // await axios.post("http://localhost:8800/api/auth/register", inputData)
@@ -140,8 +138,6 @@ const handleSubmit = async (e) => {
 const onChange = (e) => {
   setValues({ ...values, [e.target.name]: e.target.value });
 };
-//console.log(values);
-
 
 
 return (

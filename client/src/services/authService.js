@@ -19,12 +19,12 @@ export const register = async (  username, email, country, img, city, phone, pas
 
 
 export const login = async ( email, password ) => {
-    const result = await requestLibMyAxios.post(`${baseUrl}/login`, {
-        email,
-        password
-    });
-
-    return result;
+        const result = await requestLibMyAxios.post(`${baseUrl}/login`, {
+            email,
+            password
+        });
+    
+        return result;       
 };
 
 
