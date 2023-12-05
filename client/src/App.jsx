@@ -17,6 +17,7 @@ import SingleProduct from "./components/SingleProductPage/SingleProduct";
 import ProfilePage from "./components/ProfilePage/Profile";
 import CreateProductPage from "./components/CreateProductAdminPage/CreateProductPage";
 import CartPage from "./components/CartPage/CartPage";
+import EditProductPage from "./components/EditProductPage/EditProductPage";
 
 import { AuthProvider } from './context/AuthContext';
 import AuthGuard from "./guards/AuthGuard";
@@ -39,6 +40,7 @@ import AuthGuard from "./guards/AuthGuard";
                 <Route path="/profile" element={<ProfilePage />} />
                 <Route path='/logout' element={<Logout/>} />
                 <Route path="/create" element={<CreateProductPage/>} />
+                <Route path="/:productId/edit" element={<EditProductPage/>} />
               </Route>
               
               <Route path="/about" element={<AboutPage/>} />

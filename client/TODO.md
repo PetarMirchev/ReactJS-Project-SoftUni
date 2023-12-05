@@ -1,8 +1,9 @@
 # main:
 
-
 # 2 - add CRUD logic on products & validation on forms
 # 2.1 - add dummy data in server for rendering purposes
+# 2.2 - to be test Edit page form !
+# 2.3 - add remove/delete 
 
 
 # 6 - create Shipping, Payment, Place Order 

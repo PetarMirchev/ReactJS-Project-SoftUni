@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
-import './createProduct.css';
+import React, { useState, useEffect } from 'react';
+import './editProduct.css';
 import FormInput from './componentForm/FormInputLines';
 
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import * as productsService from '../../services/productsService'
 
 const CreateProductPage = () => {
     const navigate = useNavigate();
+    
+    const { productId } = useParams(); 
 
     const [values, setValues] = useState({  //use Object in useState to take over the big data
         product: "",
@@ -16,6 +18,10 @@ const CreateProductPage = () => {
         quantity: "",
         photo: "",
     });
+
+    useEffect( () => {
+      productsService.getOne(productId).then( product => setValues(product)).catch( (err) => {console.log(err);} );
+    }, [productId])
 
     //pass input data from user to useState using
     const onChange = (e) => {
@@ -94,8 +100,8 @@ const CreateProductPage = () => {
       
             try{
                 const productData = values;
-                const result = await productsService.create(productData);
-                navigate("/");
+                const result = await productsService.edit(productId, productData);
+                navigate("/shop");
               } 
               catch(err) {
                 console.log({err});
@@ -117,21 +123,8 @@ const CreateProductPage = () => {
                 <div className="col-md-5 border-right">
                     <div className="p-3 py-5">
                         <div className="d-flex justify-content-between align-items-center mb-3">
-                        <h4 className="text-right">Create/Add New Product</h4>
+                        <h4 className="text-right">Edit Product</h4>
                 </div>
-
-                {/* <form onSubmit={handleSubmit}>
-                <div className="row mt-3">
-                   
-                        <div className="col-md-12"><label className="labels">Type Article: </label><input type="text" className="form-control" placeholder="enter simple product name" /></div>
-                        <div className="col-md-12"><label className="labels">Manufacturer: </label><input type="text" className="form-control" placeholder="enter company manufacturer" /></div>
-                        <div className="col-md-12"><label className="labels">Detailed Description: </label><input type="text" className="form-control" placeholder="enter description" /></div>
-                        <div className="col-md-12"><label className="labels">Price: </label><input type="text" className="form-control" placeholder="enter price" /></div>
-                        <div className="col-md-12"><label className="labels">Available quantity</label><input type="text" className="form-control" placeholder="enter quantity (pcs)" /></div>
-                        <div className="col-md-12"><label className="labels">Link with product photo: </label><input type="text" className="form-control" placeholder="enter product photo URL(https://....)"/></div>                 
-                </div>
-                <div className="mt-5 text-center"><button className="btn btn-success profile-button" type="submit">Create/Add Product</button></div>
-                </form>  */}
 
                 <form onSubmit={handleSubmit}>
                     <div className="row mt-3">
@@ -139,7 +132,7 @@ const CreateProductPage = () => {
                             <FormInput key={input.id} {...input} value={values[input.name]} onChange={onChange}/>
                         ))}  
                     </div>
-                    <div className="mt-5 text-center"><button className="btn btn-success profile-button" type="submit">Create/Add Product</button></div>
+                    <div className="mt-5 text-center"><button className="btn btn-success profile-button" type="submit">Edit Product</button></div>
                 </form>
                 
            </div>
