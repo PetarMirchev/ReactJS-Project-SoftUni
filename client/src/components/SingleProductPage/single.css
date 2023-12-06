@@ -24,6 +24,43 @@
     margin-bottom: 50px;
 }
 
-#button-extra-1{
+#button-extra-1 {
     border-radius: 1px;
+}
+
+#delete-button {
+    background-color: red;
+}
+#delete-button:hover {
+    background-color: rgb(105, 5, 5)(255, 0, 0);
+}
+
+#edit-button {
+    background-color: #4285f4; /* Set your preferred background color */
+    color:white,; /* Set your preferred text color */
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* Hover effect */
+  #edit-button:hover {
+    background-color: #2d5da7; /* Set a darker shade or different color on hover */
+  }
+
+.confirmation-dialog{
+    padding-top: 20px;
+}
+
+
+.delBTN-no{
+    background-color: red;
+}
+.delBTN-no:hover {
+    background-color: rgb(122, 8, 8);
+}
+
+.delBTN-yes:hover {
+    background-color: rgb(12, 122, 8);
 }
