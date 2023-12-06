@@ -21,8 +21,6 @@ import EditProductPage from "./components/EditProductPage/EditProductPage";
 
 import { AuthProvider } from './context/AuthContext';
 import AuthGuard from "./guards/AuthGuard";
-
-//! search component  to be implemented in 'Shop/Filter/Filter.jsx'
   
 
   function App() {

@@ -84,10 +84,14 @@ const SingleProduct = () => {
                         </div>
                     </div>
                     <br/>
+
+                  {/* <!-- Edit/Delete buttons ( Only for creator of this)  --> */}
+                  {userId === product._ownerId && ( 
                     <div>
                         <Link to={`/${productId}/edit`}><button id='edit-button'>Edit</button></Link>
                         <button id='delete-button' onClick={() => handleDeleteClick(product.product)}>DELETE</button>
                     </div>
+                  )}
 
                      {/* Confirmation Dialog for DELETE */}
                         {productToDelete && (
