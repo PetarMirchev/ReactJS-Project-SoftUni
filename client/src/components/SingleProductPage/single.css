@@ -64,3 +64,16 @@
 .delBTN-yes:hover {
     background-color: rgb(12, 122, 8);
 }
+
+
+.comments-section {
+    background-color: #eee;
+ }
+ 
+ .card-footer{
+     background-color: #f8f9fa;
+ }
+ 
+ .form-control{
+     background: #fff;    
+ }

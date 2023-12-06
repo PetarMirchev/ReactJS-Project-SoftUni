@@ -1,8 +1,11 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState, useReducer } from 'react';
 import './single.css';
 import { useNavigate, useParams, Link } from 'react-router-dom';
 import * as productsService from '../../services/productsService';
 import AuthContext from '../../context/AuthContext';
+import reducer from './Comments/commentReducer';
+import * as commentService from '../../services/commentService';
+import useForm from '../../hooks/useForm';
 
 
 const SingleProduct = () => {
@@ -10,14 +13,21 @@ const SingleProduct = () => {
     const {productId} = useParams();
     const [product, setProduct] = useState({});
     const navigate = useNavigate();
-    const {email, userId } = useContext(AuthContext);
     const [productToDelete, setProductToDelete] = useState(null);
+    const [ comments, dispatch] = useReducer(reducer, []);
+    const { username, userId, img } = useContext(AuthContext);
 
 
     useEffect( () => {
         productsService.getOne(productId).then((data) => setProduct(data)).catch((err) => console.log(err));
-    }, [productId]);
 
+        commentService.getAll(productId).then( (result) => {
+            dispatch({
+                type: "GET_ALL_COMMENTS",
+                payload: result,
+            });
+        }).catch( (error) => {console.log(error);});
+    }, [productId]);
 
     const handleDeleteClick = (productName) => {
         setProductToDelete(productName);
@@ -39,6 +49,22 @@ const SingleProduct = () => {
         setProductToDelete(null);
       };
 
+
+
+//***************************************************************************************************** */   
+    const addCommentHandler2 = async (values) => {
+        const newComment = await commentService.create(productId, values.comment, img);
+        
+        newComment.owner = { username }; //push email (or username) of the creator
+        newComment.img = { img };
+        dispatch({
+                type: "ADD_COMMENT",
+                payload: newComment
+            })
+        };
+        
+    const { values, onChange, onSubmit } = useForm(addCommentHandler2, { comment: '', });
+//****************************************************************************************************** */
 
   return (
     <div>
@@ -110,7 +136,78 @@ const SingleProduct = () => {
 
 
 
-   
+
+    {/* *********************** <Comments/>  *********************************** */}
+    <div>
+
+    <section className='comments-section'>
+    <div className="container my-5 py-5">
+        <div className="row d-flex justify-content-center">
+        <div className="col-md-12 col-lg-10 col-xl-8">
+
+            {comments.map(({ _id, text, owner: { username }, owner: { img } }) => (
+             <li key={_id}>
+                <div className="card">
+                    <div className="card-body">
+                        <div className="d-flex flex-start align-items-center">
+                        <img className="rounded-circle shadow-1-strong me-3"
+                            src={img} alt="avatar" width="60"
+                            height="60" />
+                        <div>
+                            <h6 className="fw-bold text-primary mb-1">{username}</h6>
+                        </div>
+                        </div>
+
+                        <p className="mt-3 mb-4 pb-2">
+                            {text}
+                        </p>    
+                    </div>
+                </div>
+            </li>   
+            ))}
+
+
+            {/* -----> user comment form <----- */}
+            {userId && ( // if no user is logged in not show the comment form!
+            <form onSubmit={onSubmit}>
+                <div className="card-footer py-3 border-0">
+                    <div className="d-flex flex-start w-100">
+                    <img className="rounded-circle shadow-1-strong me-3"
+                        src={img} alt="avatar" width="40"
+                        height="40" />
+                    <div className="form-outline w-100">
+                        <textarea className="form-control" 
+                        id="textAreaExample" 
+                        rows="4" 
+                        name="comment"
+                        value={values.comment}
+                        onChange={onChange}
+                        placeholder='add your comment.....'
+                        ></textarea>
+                        {/* <label className="form-label" htmlFor="textAreaExample">Message</label> */}
+                    </div>
+                    </div>
+                    <div className="float-end mt-2 pt-1">
+                    <button type="submit" className="btn btn-primary btn-sm">Post comment</button>
+                    {/* <button type="button" className="btn btn-outline-primary btn-sm">Cancel</button> */}
+                    </div>
+                </div>
+            </form>
+            )}
+            </div>
+        </div>
+        </div>
+
+    </section>
+
+    
+    {comments.length === 0 && ( // return [] --> 'Test game', 'Fantasy', '112', ....
+                    <p className="row d-flex justify-content-center">No comments.</p>
+    )}
+
+    </div>
+
+
 
     </div>
   )

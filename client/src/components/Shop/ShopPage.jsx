@@ -14,7 +14,7 @@ useEffect(() => {
   productsService.getAllData().then(json => {
     setPosts(json)
     setSearchResults(json)
-  })
+  }).catch(err => console.log(err))
 }, []);
 
   return (
