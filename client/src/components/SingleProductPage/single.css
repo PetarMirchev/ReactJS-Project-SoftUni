@@ -77,3 +77,8 @@
  .form-control{
      background: #fff;    
  }
+
+ .row-comment-user{
+    font-weight: 600;
+    font-size: 24px;
+ }

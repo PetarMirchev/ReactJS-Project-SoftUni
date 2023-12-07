@@ -151,11 +151,11 @@ const SingleProduct = () => {
                 <div  className="card">
                     <div className="card-body">
                         <div className="d-flex flex-start align-items-center">
-                        <img className="rounded-circle shadow-1-strong me-3"
+                        {/* <img className="rounded-circle shadow-1-strong me-3"
                             src={img} alt="avatar" width="60"
-                            height="60" />
+                            height="60" /> */}
                         <div>
-                            <h6 className="fw-bold text-primary mb-1">{username}</h6>
+                            <h6 className="fw-bold text-primary mb-1">{username}: </h6>
                         </div>
                         </div>
 
@@ -167,30 +167,32 @@ const SingleProduct = () => {
             </li>   
             ))}
 
+            {comments.length === 0 && (
+                <p className="row-comment-user d-flex justify-content-center">No comments.</p>
+            )}
 
             {/* -----> user comment form <----- */}
             {userId && ( // if no user is logged in not show the comment form!
             <form onSubmit={onSubmit}>
                 <div className="card-footer py-3 border-0">
                     <div className="d-flex flex-start w-100">
-                    <img className="rounded-circle shadow-1-strong me-3"
-                        src={img} alt="avatar" width="40"
-                        height="40" />
-                    <div className="form-outline w-100">
-                        <textarea className="form-control" 
-                        id="textAreaExample" 
-                        rows="4" 
-                        name="comment"
-                        value={values.comment}
-                        onChange={onChange}
-                        placeholder='add your comment.....'
-                        ></textarea>
-                        {/* <label className="form-label" htmlFor="textAreaExample">Message</label> */}
-                    </div>
+                        <img className="rounded-circle shadow-1-strong me-3"
+                            src={img} alt="avatar" width="40" height="40" 
+                        />
+                            <div className="form-outline w-100">
+                                <textarea className="form-control" 
+                                id="textAreaExample" 
+                                rows="4" 
+                                name="comment"
+                                value={values.comment}
+                                onChange={onChange}
+                                placeholder='add your comment.....'
+                                ></textarea>
+                                {/* <label className="form-label" htmlFor="textAreaExample">Message</label> */}
+                            </div>
                     </div>
                     <div className="float-end mt-2 pt-1">
-                    <button type="submit" className="btn btn-primary btn-sm">Post comment</button>
-                    {/* <button type="button" className="btn btn-outline-primary btn-sm">Cancel</button> */}
+                        <button type="submit" className="btn btn-primary btn-sm">Post comment</button>
                     </div>
                 </div>
             </form>
@@ -202,9 +204,6 @@ const SingleProduct = () => {
     </section>
 
     
-    {comments.length === 0 && ( // return [] --> 'Test game', 'Fantasy', '112', ....
-                    <p className="row d-flex justify-content-center">No comments.</p>
-    )}
 
     </div>
 
