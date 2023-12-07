@@ -28,7 +28,7 @@ const ContactPage = () => {
        const response = await axios.post('http://localhost:3001/send-email', formData);
        console.log(response.data);
 
-       //! TODO - add logic to handle success or show a thank-you message to the user
+       //logic to handle success or show a thank-you message to the user
        navigate('/');
       
     } catch (error) {
@@ -102,7 +102,8 @@ const ContactPage = () => {
                                     value={formData.email}
                                     onChange={handleChange}
                                     id="email" 
-                                    placeholder="Your email" 
+                                    placeholder="Your email"
+                                    pattern="^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$"
                                     required=""
                                   />
                                 </fieldset>

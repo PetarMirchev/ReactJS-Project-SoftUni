@@ -14,8 +14,7 @@ const Register = () => {
   const { registerSubmitHandler } = useContext(AuthContext);
 
 
-  //whit useState nonstop rerender when is input data in formInput
-  const [values, setValues] = useState({  //use Object in useState to take over the big data
+  const [values, setValues] = useState({ 
     username: "",
     email: "",
     country: "",
@@ -25,10 +24,6 @@ const Register = () => {
     password: "",
     confirmPassword: "",
 });
-// console.log(values);
-// console.log("re-render...");
-//in form --><FormInput placeholder="Username" setUsername={setValues}/>
-//in FormInput.jsx --->  <input placeholder={props.placeholder} onChange={ (e) => props.setValues(e.target.value)}/>
 
 
 
@@ -116,7 +111,7 @@ const inputs = [
 ];
 
 
-//function to prevent refresh the page after submit and pass DATA to BackEnd
+
 const handleSubmit = async (e) => {
   e.preventDefault();
 

@@ -19,6 +19,7 @@ export const AuthProvider = ({ children }) => {
             const result = await authService.login(values.email, values.password);
             
             // second step - set information in custom hook to be saved & check if is still in youse
+            delete result.password;
             setAuth(result);
     
             // third step - save token in 'localStorage --> 'accessToken''
@@ -40,12 +41,11 @@ export const AuthProvider = ({ children }) => {
     const registerSubmitHandler = async ( values ) => {
 
         try {
-            //console.log(values);
-            //! password to be Encrypted!
+            //! password to be Encrypted??
             const result = await authService.register(  values.username, values.email, values.country, values.img, values.city, values.phone, values.password);
-    
+            delete result.password;
+
             setAuth(result);
-            //console.log(result);
             localStorage.setItem('accessToken', result.accessToken);
             navigate('/'); //Path.Home           
         } catch (error) {
@@ -59,7 +59,7 @@ export const AuthProvider = ({ children }) => {
     const logoutHandler = () => {
         setAuth({});
         localStorage.removeItem('accessToken');
-        // localStorage.removeItem('auth');
+        localStorage.removeItem('auth');
     };
 
 

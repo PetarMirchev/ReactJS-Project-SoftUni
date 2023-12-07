@@ -10,6 +10,10 @@
 
 
 # bonus?
-# 3 - add OpenWeather API in user profile ?
+# 1 - Implementing reCAPTCHA in contact form ?
+# https://clerk.com/blog/implementing-recaptcha-in-react
+# https://blog.logrocket.com/implement-recaptcha-react-application/
+
+# 2 - add OpenWeather API in user profile ?
 
 # import NameComponent from './NameComponent.module.css';   --->  CharacterList.module.css

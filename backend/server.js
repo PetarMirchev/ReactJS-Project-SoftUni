@@ -15,6 +15,7 @@ app.post('/send-email', (req, res) => {
 
   
   //https://www.youtube.com/watch?v=eoiTAPfeAis&ab_channel=CodingShiksha
+  //https://copyprogramming.com/howto/send-mail-through-yahoo-in-node-js
   // Replace these with your email server details
   const transporter = nodemailer.createTransport({
     service:'yahoo',
