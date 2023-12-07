@@ -14,9 +14,9 @@ const Banner = () => {
                             <div className="thumb">
                                 <div className="inner-content">
                                     <h4>We Are Hexashop</h4>
-                                    <span>Awesome, clean &amp; creative HTML5 Template</span>
+                                    <span>Awesome products for You, friends & your Family!</span>
                                     <div className="main-border-button">
-                                        <Link to="/">Purchase Now!</Link>
+                                        <Link to="/shop">Purchase Now!</Link>
                                     </div>
                                 </div>
                                 <img src="images/left-banner-image.jpg" alt="welcome"/>
@@ -36,7 +36,7 @@ const Banner = () => {
                                             <div className="hover-content">
                                                 <div className="inner">
                                                     <h4>Women</h4>
-                                                    <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>
+                                                    <p>Find the perfect outfit for the right moment now!.</p>
                                                     <div className="main-border-button">
                                                         <Link to="/shop">Discover More</Link>
                                                     </div>
@@ -56,7 +56,7 @@ const Banner = () => {
                                             <div className="hover-content">
                                                 <div className="inner">
                                                     <h4>Men</h4>
-                                                    <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>
+                                                    <p>Style and vision are a way of life for us!</p>
                                                     <div className="main-border-button">
                                                         <Link to="/shop">Discover More</Link>
                                                     </div>
@@ -76,7 +76,7 @@ const Banner = () => {
                                             <div className="hover-content">
                                                 <div className="inner">
                                                     <h4>Kids</h4>
-                                                    <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>
+                                                    <p>The perfect clothes for your precious child!</p>
                                                     <div className="main-border-button">
                                                         <Link to="/shop">Discover More</Link>
                                                     </div>
@@ -96,7 +96,7 @@ const Banner = () => {
                                             <div className="hover-content">
                                                 <div className="inner">
                                                     <h4>Accessories</h4>
-                                                    <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>
+                                                    <p>watches, bracelets, locket, rings, brooches... we have everything you can think of!</p>
                                                     <div className="main-border-button">
                                                         <Link to="/shop">Discover More</Link>
                                                     </div>

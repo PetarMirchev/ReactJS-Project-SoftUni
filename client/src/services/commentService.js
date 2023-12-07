@@ -7,6 +7,7 @@ export const create = async (productId, text, img) => {
     const newComment = await requestLibMyAxios.post(baseUrl, {
         productId,
         text,
+        img,
     });
 
     return newComment;
@@ -21,6 +22,6 @@ export const getAll = async (productId) => {
 
     const result = await requestLibMyAxios.get(`${baseUrl}?${query}`);
 
-    console.log(result);
+    //console.log(result);
     return result;
 }

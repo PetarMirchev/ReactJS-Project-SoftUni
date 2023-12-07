@@ -12,12 +12,15 @@ const ExploreProducts = () => {
                 <div className="col-lg-6">
                     <div className="left-content">
                         <h2>Explore Our Products</h2>
-                        <span>You are allowed to use this HexaShop HTML CSS template. You can feel free to modify or edit this layout. You can convert this template as any kind of ecommerce CMS theme as you wish.</span>
+                        <span>We all love getting new pieces for our wardrobe or home, but sometimes it's not easy on our wallets. 
+                             </span>
                         <div className="quote">
-                            <i className="fa fa-quote-left"></i><p>You are not allowed to redistribute this template ZIP file on any other website.</p>
+                            <i className="fa fa-quote-left"></i><p>That's why we have amazing offers for everyone in the family to enjoy!</p>
                         </div>
-                        <p>There are 5 pages included in this HexaShop Template and we are providing it to you for absolutely free of charge at our TemplateMo website. There are web development costs for us.</p>
-                        <p>Please also tell your friends about our great website. Thank you.</p>
+                        <p>From women's clothing offers, and men's clothing offers, to kids' offers, there's something for everyone in your family at discounted prices. It doesn't stop there either we also have offers on homeware that allow you to freshen up your interiors without breaking the bank. Keep up to date with our latest offers and don't miss out!</p>
+                        <div className="quote">
+                            <i className="fa fa-quote-left"></i><p>Please also tell your friends about our great website. Thank you.</p>
+                        </div>
                         <div className="main-border-button">
                             <a href="/shop">Discover More</a>
                         </div>

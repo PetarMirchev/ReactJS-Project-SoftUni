@@ -51,7 +51,8 @@ const SingleProduct = () => {
 
 
 
-//***************************************************************************************************** */   
+//***************************************************************************************************** */
+     
     const addCommentHandler2 = async (values) => {
         const newComment = await commentService.create(productId, values.comment, img);
         
@@ -145,9 +146,9 @@ const SingleProduct = () => {
         <div className="row d-flex justify-content-center">
         <div className="col-md-12 col-lg-10 col-xl-8">
 
-            {comments.map(({ _id, text, owner: { username }, owner: { img } }) => (
+            {comments.map(({ _id, text, owner: { username }, img }) => (
              <li key={_id}>
-                <div className="card">
+                <div  className="card">
                     <div className="card-body">
                         <div className="d-flex flex-start align-items-center">
                         <img className="rounded-circle shadow-1-strong me-3"
@@ -208,6 +209,7 @@ const SingleProduct = () => {
     </div>
 
 
+   
 
     </div>
   )
