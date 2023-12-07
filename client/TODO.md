@@ -1,7 +1,6 @@
 # main:
 
 # 1 - hash password  on user ?
-# 2 - fix comments problems user to comment his products
 # 2.1 - put limit on number of comments for current user?
 
 

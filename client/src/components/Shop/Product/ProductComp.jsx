@@ -15,56 +15,53 @@ const ProductComp = ({searchResults}) => {
 
 
   return (
-<div className='buffer1'>
-
-    <section className="section" id="products">
-        <div className="container">
-            <div className="row">
-                <div className="col-lg-12">
-                    <div className="section-heading">
-                        <p id='product-span-info'>Check out all of our products.</p>
+    <div className='buffer1'>
+        <section className="section" id="products">
+            <div className="container">
+                <div className="row">
+                    <div className="col-lg-12">
+                        <div className="section-heading">
+                            <p id='product-span-info'>Check out all of our products.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-    
+        
         <div className="container">
-            <div className="row">
-               
-                
-               {/* ------>render Card hear! <CardBox/> <--------*/}
-                                 {content}
-                {/* ****---------->      <----------------------**** */}
+            <div className="row">    
+                {/* ------>render Card hear! <CardBox/> <--------*/}
+                                    {content}
+                    {/* ****---------->      <----------------------**** */}
 
 
-
-                <div className="col-lg-12">
-                    <div className="pagination">
-                        <ul>
-                            <li>
-                                <a href="/">1</a>
-                            </li>
-                            <li className="active">
-                                <a href="/">2</a>
-                            </li>
-                            <li>
-                                <a href="/">3</a>
-                            </li>
-                            <li>
-                                <a href="/">4</a>
-                            </li>
-                            <li>
-                                <a href="/">-</a>
-                            </li>
-                        </ul>
-                    </div>
+                {/* //TODO pagination */}
+                 {/*<div className="col-lg-12"> 
+                        <div className="pagination">
+                            <ul>
+                                <li>
+                                    <a href="/">1</a>
+                                </li>
+                                <li className="active">
+                                    <a href="/">2</a>
+                                </li>
+                                <li>
+                                    <a href="/">3</a>
+                                </li>
+                                <li>
+                                    <a href="/">4</a>
+                                </li>
+                                <li>
+                                    <a href="/">-</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div> */}
                 </div>
             </div>
-        </div>
-    </section>
-    
-</div>
+        </section>
+        
+    </div>
   )
 }
 
