@@ -12,17 +12,20 @@ app.use(bodyParser.json());
 app.post('/send-email', (req, res) => {
   const { name, email, message } = req.body;
 
+
+  
+  //https://www.youtube.com/watch?v=eoiTAPfeAis&ab_channel=CodingShiksha
   // Replace these with your email server details
   const transporter = nodemailer.createTransport({
-    service: 'gmail',
+    service:'yahoo',
     auth: {
-      user: 'mychieldreactbackendnodemailer@gmail.com',
-      pass: 'qwertyuiop-1234567890!'
-    }
+      user: 'petar_mirchev@yahoo.com',
+      pass: 'abufpdqpkfwssyhg',
+    },
   });
 
   const mailOptions = {
-    from: 'mychieldreactbackendnodemailer@gmail.com',
+    from: 'petar_mirchev@yahoo.com',
     to: 'petar_g@abv.bg',
     subject: 'New Contact Form Submission',
     text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`

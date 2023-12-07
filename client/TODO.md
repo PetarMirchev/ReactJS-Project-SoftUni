@@ -10,7 +10,6 @@
 
 
 # bonus?
-# 1 - nodemailer for contacts page form 
 # 3 - add OpenWeather API in user profile ?
 
 # import NameComponent from './NameComponent.module.css';   --->  CharacterList.module.css
