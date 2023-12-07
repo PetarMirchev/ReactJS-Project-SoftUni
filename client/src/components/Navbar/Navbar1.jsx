@@ -26,30 +26,31 @@ const Navbar1 = () => {
                         {/* <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** --> */}
                         <ul className="nav">
-                            <li ><Link to="/">Home</Link></li>
+                            <li><Link to="/">Home</Link></li>
                             <li><Link to="/shop">Shop</Link></li>
-                            <li ><Link to="/about">About</Link></li>
-                            <li ><Link to="/contact">Contact</Link></li>
+                            <li><Link to="/about">About</Link></li>
+                            <li><Link to="/contact">Contact</Link></li>
 
                             {/* if is no "user" (log in) show dis div down (login/register buttons), if is "user" show his name */}
                                     {!isAuthenticated && (  
-                                        <span>                        
+                                        <>                        
                                             <li><Link to="/register">Register</Link></li>
                                             <li><Link to="/login">Login</Link></li>
-                                        </span>  
+                                        </> 
                                     )}
 
                                     {isAuthenticated && (  
-                                    <div>
-                                        <li><Link to="/profile">{username}</Link></li>
-                                        <li><Link to="/logout">Logout</Link></li> 
-                                    </div>
+                                        <>
+                                            <li><Link to="/create">Create/Add</Link></li>
+                                            <li><Link to="/profile">{username}</Link></li>
+                                            <li><Link to="/logout">Logout</Link></li> 
+                                        </>
                                     )}
                                     
                                     {/* for admin to add/create new items    */}
-                                    {email === 'admin@abv.bg' &&(
-                                    <li ><Link to="/create">Create/Add</Link></li>
-                                    )}
+                                    {/* {email === 'admin@abv.bg' &&(
+                                        <li ><Link to="/create">Create/Add</Link></li>
+                                    )} */}
 
                                 {/* user CART (chosen items from user!)             */}
                                     <li >
