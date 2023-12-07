@@ -172,7 +172,7 @@ const SingleProduct = () => {
             )}
 
             {/* -----> user comment form <----- */}
-            {userId && ( // if no user is logged in not show the comment form!
+            {userId !== product._ownerId && userId && ( // if no user is logged in not show the comment form or is owner!
             <form onSubmit={onSubmit}>
                 <div className="card-footer py-3 border-0">
                     <div className="d-flex flex-start w-100">
