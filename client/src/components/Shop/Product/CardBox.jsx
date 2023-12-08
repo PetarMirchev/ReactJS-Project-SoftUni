@@ -6,7 +6,7 @@ const CardBox = ({post}) => {
 
   return (
 
-    <div className="col-lg-4">
+    <div className="col-lg-3">
         <div className="item">
             <div className="thumb">
                 <div className="hover-content">
@@ -22,7 +22,7 @@ const CardBox = ({post}) => {
                   
                     </ul>
                 </div>
-                <img src={post.photo} alt="one"/>
+                <img width="250" height="320" src={post.photo} alt="one"/>
             </div>
             <div className="down-content">
                 <h4>{post.product}</h4>
