@@ -12,7 +12,7 @@ how to run the project:
 6) enjoy the project!
 
 
-photos from the project:
+Project functionality:
 
 Public Part (Accessible without authentication):
 ![1 ---Screenshot 2023-12-08 205552](https://github.com/PetarMirchev/ReactJS-Project-SoftUni/assets/73035495/29b0640d-9cb2-4805-8076-00f72afd5d68)
@@ -26,8 +26,11 @@ Public Part (Accessible without authentication):
 Private Part (Available for Registered Users):
 ![7--- Screenshot 2023-12-08 211310](https://github.com/PetarMirchev/ReactJS-Project-SoftUni/assets/73035495/523959a6-a2f0-4ca2-bc08-8f2bd7d7eaf4)
 
+
 Logged in (author) – to be able to Edit / Delete their records:
 ![8 --- Screenshot 2023-12-08 211454](https://github.com/PetarMirchev/ReactJS-Project-SoftUni/assets/73035495/216cf813-5250-4c34-9b21-94b25dab4bbc)
+
+
 Logged in users – create records and request to the REST API, interaction with the records Comments:
 ![9 --- Screenshot 2023-12-08 211710](https://github.com/PetarMirchev/ReactJS-Project-SoftUni/assets/73035495/f5276453-9a07-4ea1-8055-0107bfd97482)
 
