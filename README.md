@@ -19,6 +19,9 @@ Public Part (Accessible without authentication):
 ![2 ----Screenshot 2023-12-08 205624 ---2](https://github.com/PetarMirchev/ReactJS-Project-SoftUni/assets/73035495/be8e8e68-efa9-4a8d-bfee-e668b067bf46)
 ![3 ---- Screenshot 2023-12-08 211045](https://github.com/PetarMirchev/ReactJS-Project-SoftUni/assets/73035495/47d95cdc-03a2-4fcb-ab62-1a5c754f3d7a)
 ![4 --- Screenshot 2023-12-08 211118](https://github.com/PetarMirchev/ReactJS-Project-SoftUni/assets/73035495/909e0e0c-be3f-4950-b6ee-8d1be1645bae)
+
+
+the visitor can send a letter through the form:
 ![5 ---- Screenshot 2023-12-08 211202](https://github.com/PetarMirchev/ReactJS-Project-SoftUni/assets/73035495/6f13bf9a-309c-4e1e-899b-d5e16db7e214)
 ![6 --- Screenshot 2023-12-08 211310](https://github.com/PetarMirchev/ReactJS-Project-SoftUni/assets/73035495/8df139c9-5c2d-41d3-93b3-993f31271378)
 
