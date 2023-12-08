@@ -2,7 +2,6 @@
 [ Block2 ]*/
 
 .buffer1{
-  padding-top: 30px;
   padding-bottom: 10px;
 }
 
@@ -17,7 +16,7 @@ Products Page
 }
 
 .page-heading {
-  margin-top: 160px;
+
   margin-bottom: 30px;
   background-image: url(../../../../public/images/products-page-heading.jpg);
   background-position: center center;

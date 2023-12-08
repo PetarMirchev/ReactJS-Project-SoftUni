@@ -21,7 +21,9 @@ export const SearchBar = ({posts, setSearchResults}) => {
 
 
     <div className='wind-wrapper'> 
-      <h1>Search product:</h1> 
+      <div className='container'>
+        <h3 className='text-center mx-auto'>Search product:</h3>
+      </div> 
       <div className='search-class'>
 
             <form action='search' onSubmit={handleSubmit}>
