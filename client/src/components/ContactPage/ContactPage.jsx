@@ -4,10 +4,11 @@ import axios from 'axios';
 import {useNavigate} from 'react-router-dom';
 
 
-
 const ContactPage = () => {
 
   const navigate = useNavigate();
+
+  const [errorMessage, setErrorMessage] = useState(false);
 
   const [formData, setFormData] = useState({
     name: '',
@@ -23,6 +24,11 @@ const ContactPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if(formData.email === '' || formData.name === '' || formData.message === ''){
+      setErrorMessage(true);
+      return;
+    }
 
     try {
        const response = await axios.post('http://localhost:3001/send-email', formData);
@@ -89,8 +95,9 @@ const ContactPage = () => {
                                     value={formData.name}
                                     onChange={handleChange}
                                     id="name" 
-                                    placeholder="Your name" 
-                                    required=""
+                                    placeholder="Your name"
+                                    pattern='^[a-zA-Z0-9_-]{3,20}$'
+                                    required
                                   />
                                 </fieldset>
                               </div>
@@ -104,7 +111,7 @@ const ContactPage = () => {
                                     id="email" 
                                     placeholder="Your email"
                                     pattern="^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$"
-                                    required=""
+                                    required
                                   />
                                 </fieldset>
                               </div>
@@ -117,20 +124,21 @@ const ContactPage = () => {
                                   value={formData.message}
                                   onChange={handleChange}
                                   placeholder="Your message" 
-                                  required=""></textarea>
+                                  required></textarea>
                                 </fieldset>
                               </div>
                               <div className="col-lg-12">
                                   <button type="submit" id="form-submit" className="main-dark-button">Send</button>
                               </div>
+                              {errorMessage && (<p className='user-alert-form-message'>All fields are required! Please input correct information!</p>)}
                             </div>
                         </form>
+
 
                     </div>
                 </div>
             </div>
         </div>
- 
     </div>
   )
 }
