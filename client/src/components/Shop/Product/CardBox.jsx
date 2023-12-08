@@ -1,7 +1,9 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
+
 const CardBox = ({post}) => {
+
   return (
 
     <div className="col-lg-4">
@@ -17,6 +19,7 @@ const CardBox = ({post}) => {
                                 </svg>
                             </Link>
                         </li>
+                  
                     </ul>
                 </div>
                 <img src={post.photo} alt="one"/>

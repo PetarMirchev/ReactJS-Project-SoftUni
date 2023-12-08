@@ -21,36 +21,42 @@ import EditProductPage from "./components/EditProductPage/EditProductPage";
 
 import { AuthProvider } from './context/AuthContext';
 import AuthGuard from "./guards/AuthGuard";
+
+
+import { store } from './components/CartPage/store/store';
+import { Provider } from 'react-redux';
   
 
   function App() {
   return (
     <BrowserRouter>
       <AuthProvider>
-          <Navbar1/>
-        <Routes>
-              <Route path="/" element={<HomePage/>} />
+        <Provider store={store}> 
+            <Navbar1/>
+              <Routes>
+                    <Route path="/" element={<HomePage/>} />
 
-              <Route path="/register" element={<Register/>} />
-              <Route path="/login" element={<Login/>}/>
+                    <Route path="/register" element={<Register/>} />
+                    <Route path="/login" element={<Login/>}/>
 
-              <Route element={<AuthGuard/>}>
-                <Route path="/profile" element={<ProfilePage />} />
-                <Route path='/logout' element={<Logout/>} />
-                <Route path="/create" element={<CreateProductPage/>} />
-                <Route path="/:productId/edit" element={<EditProductPage/>} />
-              </Route>
-              
-              <Route path="/about" element={<AboutPage/>} />
-              <Route path="/contact" element={<ContactPage/>} /> 
-              <Route path="/shop" element={<ShopPage/>} />             
-              <Route path="/shop/:productId" element={<SingleProduct/>} />
-              
-              <Route path="cart" element={<CartPage/>} />
+                    <Route element={<AuthGuard/>}>
+                      <Route path="/profile" element={<ProfilePage />} />
+                      <Route path='/logout' element={<Logout/>} />
+                      <Route path="/create" element={<CreateProductPage/>} />
+                      <Route path="/:productId/edit" element={<EditProductPage/>} />
+                    </Route>
+                    
+                    <Route path="/about" element={<AboutPage/>} />
+                    <Route path="/contact" element={<ContactPage/>} /> 
+                    <Route path="/shop" element={<ShopPage/>} />             
+                    <Route path="/shop/:productId" element={<SingleProduct/>} />
+                    
+                    <Route path="cart" element={<CartPage/>} />
 
-              <Route path="*" element={<Page404 />} />   
-        </Routes>
-          <Footer/>
+                    <Route path="*" element={<Page404 />} />   
+              </Routes>
+            <Footer/>
+          </Provider>
         </AuthProvider>
       </BrowserRouter>
   );

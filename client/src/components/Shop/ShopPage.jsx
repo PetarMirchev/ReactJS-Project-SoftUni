@@ -11,9 +11,9 @@ const ShopPage = () => {
   const [searchResults, setSearchResults] = useState([]);
 
 useEffect(() => {
-  productsService.getAllData().then(json => {
-    setPosts(json)
-    setSearchResults(json)
+    productsService.getAllData().then(data => {
+      setPosts(data)
+      setSearchResults(data)
   }).catch(err => console.log(err))
 }, []);
 
