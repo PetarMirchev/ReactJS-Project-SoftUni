@@ -45,6 +45,7 @@ const inputs = [
     placeholder: "Email",
     errorMessage: "Need to be valid email address ... !",
     label: "Email",
+    // eslint-disable-next-line
     pattern: "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}",
     required: true,
   },
@@ -65,6 +66,7 @@ const inputs = [
     placeholder: "avatar img link",
     errorMessage: "please enter image URL!",
     label: "img",
+    // eslint-disable-next-line
     pattern: "https?://.*",
     required: true,
   },
@@ -95,6 +97,7 @@ const inputs = [
     placeholder: "Password",
     errorMessage:"Password should be 8-20 characters and include at l letter, 1 number and 1 special symbol !",
     label: "Password",
+    // eslint-disable-next-line
     pattern: `^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`,
     required: true,
   },

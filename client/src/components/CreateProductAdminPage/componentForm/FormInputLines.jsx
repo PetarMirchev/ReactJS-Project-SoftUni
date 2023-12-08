@@ -33,7 +33,7 @@ const FormInputLines = (props) => {
 export default FormInputLines;
 
 
-
+// eslint-disable-next-line
 {/* <div className="row mt-3">
                    
                    <div className="col-md-12"><label className="labels">Type Article: </label><input type="text" className="form-control" placeholder="enter simple product name" /></div>

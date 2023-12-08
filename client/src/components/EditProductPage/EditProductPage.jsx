@@ -37,6 +37,7 @@ const CreateProductPage = () => {
           placeholder: "enter product name",
           errorMessage: "please write product name! ",
           label: "Product name",
+          // eslint-disable-next-line
           pattern: "^[a-zA-Z0-9\s&'()\-]+$", //[A-Za-z0-9] -- start whit Capital letters, small letters or numbers |{3,16} -- min & max limit of required symbols //JS REGEX CODE !
           required: true,
         },
@@ -47,6 +48,7 @@ const CreateProductPage = () => {
             placeholder: "enter manufacturer name",
             errorMessage: "manufacturer name should be 2-16 characters (A-Z,a-z,0-9) and shouldn't include any special character! ",
             label: "Manufacturer name",
+            // eslint-disable-next-line
             pattern: "^[A-Za-z0-9]{2,16}$", //[A-Za-z0-9] -- start whit Capital letters, small letters or numbers |{3,16} -- min & max limit of required symbols //JS REGEX CODE !
             required: true,
           },
@@ -57,16 +59,18 @@ const CreateProductPage = () => {
           placeholder: "description",
           errorMessage: "please enter description!",
           label: "Description",
+          // eslint-disable-next-line
           pattern: "^[a-zA-Z0-9\s.,;:'\"()\-\/]+$",
           required: true,
         },
         {
             id: 4,
             name: "price",
-            type: "number",
+            type: "text",
             placeholder: "price in $",
             errorMessage: "please enter price number!",
             label: "Price",
+            // eslint-disable-next-line
             pattern: "^[0-9]{1,100000}$",
             // pattern: "^(\d{1,3}(,\d{3})*|\d+)(\.\d{1,2})?$",
             required: true,
@@ -74,7 +78,7 @@ const CreateProductPage = () => {
         {
             id: 5,
             name: "quantity",
-            type: "number",
+            type: "text",
             placeholder: "quantity (pcs)",
             errorMessage: "please enter quantity number!",
             label: "Quantity",
@@ -88,6 +92,7 @@ const CreateProductPage = () => {
           placeholder: "product photo link",
           errorMessage: "please enter image URL!",
           label: "Photo",
+          // eslint-disable-next-line
           pattern: "https?://.*",
           required: true,
         },

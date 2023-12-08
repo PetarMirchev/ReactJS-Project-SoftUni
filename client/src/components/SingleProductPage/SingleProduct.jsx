@@ -107,7 +107,7 @@ const SingleProduct = () => {
                             <h6>Options:</h6>
                         </div>
                         <div className="right-content">
-                            <button id='button-extra-1'><a href="/">Add To Cart</a></button>
+                            <Link to={"/cart"}><button id='button-extra-1'>Add To Cart</button></Link>
                         </div>
                     </div>
                     <br/>

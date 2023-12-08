@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './cartPage.css';
 import { Link } from 'react-router-dom';
 
@@ -36,7 +36,7 @@ const CartPage = () => {
                                 <div className="row">Cotton T-shirt</div>
                             </div>
                             <div className="col">
-                                <a href="#">-</a><a href="#" className="border">1</a><a href="#">+</a>
+                                <Link to={'/'}>-</Link><Link to={'/'} className="border">1</Link><Link to={'/'}>+</Link>
                                 
                             </div>
                             <div className="col">&euro; 44.00 </div>
@@ -51,7 +51,7 @@ const CartPage = () => {
                                 <div className="row">Cotton T-shirt</div>
                             </div>
                             <div className="col">
-                                <a href="#">-</a><a href="#" className="border">1</a><a href="#">+</a>
+                                <Link to={'/'}>-</Link><Link to={'/'} className="border">1</Link><Link to={'/'}>+</Link>
                             </div>
                             <div className="col">&euro; 44.00 </div>
                             <div className="col"><p className="close">&#10005;</p></div>
@@ -65,7 +65,7 @@ const CartPage = () => {
                                 <div className="row">Cotton T-shirt</div>
                             </div>
                             <div className="col">
-                                <a href="#">-</a><a href="#" className="border">1</a><a href="#">+</a>
+                                <Link to={'/'}>-</Link><Link to={'/'} className="border">1</Link><Link to={'/'}>+</Link>
                             </div>
                             <div className="col">&euro; 44.00 </div>
                             <div className="col"><p className="close">&#10005;</p></div>
